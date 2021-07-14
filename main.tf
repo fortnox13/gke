@@ -91,9 +91,9 @@ module "k8s-gke-1" {
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user    = var.ping_devops_user
-  ping_devops_key_bd  = var.ping_devops_key_bd
-  ping_devops_user_bd = var.ping_devops_user_bd
+  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_key_encrypted  = var.ping_devops_key_encrypted
+  ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
   svc_namespaces = var.k8s_gke-1_svc_namespaces
 }
@@ -115,9 +115,9 @@ module "k8s-gke-2" {
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user    = var.ping_devops_user
-  ping_devops_key_bd  = var.ping_devops_key_bd
-  ping_devops_user_bd = var.ping_devops_user_bd
+  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_key_encrypted  = var.ping_devops_key_encrypted
+  ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
   svc_namespaces = var.k8s_gke-2_svc_namespaces
 }
@@ -133,8 +133,6 @@ module "wi_k8s-gke-1" {
   project_id   = var.gcp_project_id
   cluster_name = module.gke-1.cluster_name
   location     = module.gke-1.cluster_location
-
-  depends_on = [module.k8s-gke-1]
 }
 
 module "wi_gsa-gke-1" {
@@ -161,8 +159,6 @@ module "wi_k8s-gke-2" {
   project_id   = var.gcp_project_id
   cluster_name = module.gke-2.cluster_name
   location     = module.gke-2.cluster_location
-
-  depends_on = [module.k8s-gke-2]
 }
 
 module "wi_gsa-gke-2" {

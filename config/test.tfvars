@@ -2,7 +2,7 @@
 # General
 #--------------------------------------------------------------
 # A customizable unique identifier for your project:
-gcp_project_id             = "mythic-courier-319108"
+gcp_project_id             = "telus-new-319815"
 # The next 3 variables should be provided through env variables with TF_VAR_ prefix.
 # Email in clean text for devops user that have the working license key:
 ping_devops_user_plain     = ""

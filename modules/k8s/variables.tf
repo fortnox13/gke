@@ -40,19 +40,22 @@ variable "svc_enabled" {
   description = "svc_enabled"
 }
 
-variable "ping_devops_user" {
+variable "ping_devops_user_plain" {
   type        = string
-  description = "ping_devops_user"
+  default     = ""
+  description = "ping_devops_user_plain"
 }
 
-variable "ping_devops_key_bd" {
+variable "ping_devops_key_encrypted" {
   type        = string
-  description = "ping_devops_key_bd"
+  default     = ""
+  description = "ping_devops_key_encrypted"
 }
 
-variable "ping_devops_user_bd" {
+variable "ping_devops_user_encrypted" {
   type        = string
-  description = "ping_devops_user_bd"
+  default     = ""
+  description = "ping_devops_user_encrypted"
 }
 
 variable "svc_namespaces" {
