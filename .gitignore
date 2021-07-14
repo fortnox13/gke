@@ -37,7 +37,7 @@ terraform.rc
 .terraform.lock.hcl
 
 # Ignore certs dirs
-**/certs/*
+
 
 # Ignore sa dir
 **/sas/*
