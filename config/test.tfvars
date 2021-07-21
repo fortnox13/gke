@@ -2,7 +2,7 @@
 # General
 #--------------------------------------------------------------
 # A customizable unique identifier for your project:
-gcp_project_id             = "telus-new-319815"
+gcp_project_id             = "telus-test-01"
 # The next 3 variables should be provided through env variables with TF_VAR_ prefix.
 # Email in clean text for devops user that have the working license key:
 ping_devops_user_plain     = ""
@@ -67,7 +67,7 @@ cluster_workload_identity_enabled = true
 cluster_k8s_namespaces            = ["gke-1", "gke-2"]
 # Whether enable or not the GKE istio plugin.
 # https://cloud.google.com/istio/docs/istio-on-gke/overview
-cluster_istio_config              = true
+cluster_istio_config              = false
 # By default, tools like kubectl communicate with the control plane on its public endpoint.
 # You can control access to this endpoint using authorized networks or you can disable access to the public endpoint.
 # https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept#endpoints_in_private_clusters
@@ -78,11 +78,11 @@ cluster_master_authorized_network = "0.0.0.0/0"
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster#resource_type
 cluster_initial_node_count = 1
 cluster_cpu_min            = 3
-cluster_cpu_max            = 6
+cluster_cpu_max            = 15
 cluster_memory_min         = 8
-cluster_memory_max         = 24
+cluster_memory_max         = 40
 cluster_min_node_count     = 1
-cluster_max_node_count     = 2
+cluster_max_node_count     = 5
 #--------------------------------------------------------------
 # Workload Identity
 #--------------------------------------------------------------
@@ -175,7 +175,7 @@ bastion_machine_type        = "n1-standard-1"
 #--------------------------------------------------------------
 # Whether enable or not the Global HTTP(S) Load Balancer
 # https://cloud.google.com/load-balancing/docs/https
-lb_enabled      = true
+lb_enabled      = false
 # The external port that should the LB listen for:
 lb_exposed_port = 443
 # The Network Endpoint Group that was created when the appropriate K8s service was exposed.
@@ -192,7 +192,7 @@ k8s_enabled      = true
 # The name of the service instance that should be in the annotation block of the K8s service:
 k8s_svc_instance = "pf"
 # Whether enable or not creation of the K8s services within this module:
-k8s_svc_enabled  = true
+k8s_svc_enabled  = false
 # The appropriate namespaces where the K8s services should be created:
 k8s_gke-1_svc_namespaces = ["gke-1"]
 k8s_gke-2_svc_namespaces = ["gke-2"]

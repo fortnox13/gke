@@ -133,6 +133,8 @@ module "wi_k8s-gke-1" {
   project_id   = var.gcp_project_id
   cluster_name = module.gke-1.cluster_name
   location     = module.gke-1.cluster_location
+
+  depends_on = [module.k8s-gke-1]
 }
 
 module "wi_gsa-gke-1" {
@@ -159,6 +161,8 @@ module "wi_k8s-gke-2" {
   project_id   = var.gcp_project_id
   cluster_name = module.gke-2.cluster_name
   location     = module.gke-2.cluster_location
+
+  depends_on = [module.k8s-gke-2]
 }
 
 module "wi_gsa-gke-2" {
@@ -269,4 +273,9 @@ module "mcs" {
 
   destroy_cmd_entrypoint = "${path.module}/scripts/mcs_disable.sh"
   destroy_cmd_body       = "${module.gke-1.cluster_name} ${var.cluster_gke-1_location} ${module.gke-2.cluster_name} ${var.cluster_gke-2_location}"
+
+  depends_on = [
+    module.k8s-gke-1,
+    module.k8s-gke-2
+  ]
 }

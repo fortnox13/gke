@@ -227,7 +227,7 @@ spec:
       dnsConfig:
         searches:
           - svc.clusterset.local
-          - gke1.svc.clusterset.local
+          - gke-1.svc.clusterset.local
           - clusterset.local
 #---
 #apiVersion: v1

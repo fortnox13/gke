@@ -1,6 +1,10 @@
 /*
   This module creates all needed resource to configure GKE workload identity.
   Exactly this module will do all needed from the GCP IAM side.
+  The details could be found here:
+  https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/latest/submodules/workload-identity
+  https://cloud.google.com/blog/products/containers-kubernetes/introducing-workload-identity-better-authentication-for-your-gke-applications
+  https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
 */
 
 locals {

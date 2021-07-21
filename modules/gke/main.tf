@@ -84,11 +84,8 @@ resource "google_container_cluster" "cluster" {
       disabled = false
     }
 
-    dynamic "istio_config" {
-      for_each = var.istio_config ? [1] : []
-      content {
-        disabled = false
-      }
+    istio_config {
+      disabled = !var.istio_config
     }
   }
 

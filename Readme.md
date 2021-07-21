@@ -17,7 +17,7 @@
    https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 2. Pull the repo from github:
-   https://github.com/n0mik0s/gke/tree/mr-gke
+   https://github.com/n0mik0s/gke
    cd to the repo dir.
    
    *All steps to be done assumed that you are in the repo root dir.
@@ -44,10 +44,10 @@
     Edit your tfvars file by changing the gcp_project_id variable
    
 6. Enable the GCP API's that will be used during the deployment:
-    `bash ./scripts/general_apis_to_be_enabled.sh`
-   Next API's MUST be enabled too in case you would enable the MCS
-   in your GKE cluster:
-   `bash ./scripts/mcs_apis_to_be_enabled.sh`
+    `bash ./scripts/general_apis_to_be_enabled.sh PROJECT_ID`
+   Next API's MUST be enabled too in case you would like to enable the MCS
+   in your GKE clusters:
+   `bash ./scripts/mcs_apis_to_be_enabled.sh PROJECT_ID`
 
 7. Issue `terraform init` command to initialize terraform.
 
@@ -55,8 +55,11 @@
    
    `terraform workspace new WS_NAME`
    
-9. Create ssl key and cert files and put them under certs dir in the gke root dir
-    and change appropriate lines in the main.tf file under the lb module
+9. Create ssl key and cert files. Put them under certs dir in the gke root dir.
+    Change appropriate lines in the main.tf file under the lb module.
+   
+    * How-to for certs creation:
+    https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309
 
 10. Export all sensitive env variables:
    
@@ -78,8 +81,8 @@
     
    `terraform destroy -var-file=./config/YOUR_TFVARS_FILE`
     
-    *But firstly you need to delete all namespaces terraform resources from
-    the terraform state. For example:
+    * Firstly you need to delete all namespaces terraform resources from
+    terraform state. For example:
     
     `terraform state rm \
     module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace[\"gke-1\"] \
@@ -91,4 +94,4 @@
     
    Then you MUST delete all resources that were not provisioned via
    your terraform code but set as dependencies for all resources
-   in your terraform state
+   in your terraform state.
