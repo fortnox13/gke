@@ -28,6 +28,12 @@ variable "lb_neg_name" {
   description = "lb_neg_name"
 }
 
+variable "lb_service_name" {
+  type        = string
+  default     = ""
+  description = "lb_service_name"
+}
+
 variable "svc_instance" {
   type        = string
   default     = ""

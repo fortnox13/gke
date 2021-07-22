@@ -29,6 +29,7 @@ IAM_ROLES=(
 	"roles/container.admin"
 	"roles/dns.admin"
 	"roles/iam.serviceAccountAdmin"
+	"roles/iam.serviceAccountKeyAdmin"
 	"roles/iam.workloadIdentityPoolAdmin"
 	"roles/networkmanagement.admin"
 	"roles/privateca.admin"

@@ -2,7 +2,7 @@
 # General
 #--------------------------------------------------------------
 # A customizable unique identifier for your project:
-gcp_project_id = "telus-test-01"
+gcp_project_id = ""
 # The next 3 variables should be provided through env variables with TF_VAR_ prefix.
 # Email in clean text for devops user that have the working license key:
 ping_devops_user_plain = ""
@@ -15,36 +15,36 @@ ping_devops_user_encrypted = ""
 # Network
 #--------------------------------------------------------------
 # The VPC network name
-network_name = "gke-1-2-mrc"
+network_name = ""
 
 # CIDR for the IPs that would be assigned to the worker nodes:
-network_gke-1_primary_ip_cidr_range = "10.162.0.0/20"
-network_gke-2_primary_ip_cidr_range = "10.128.0.0/20"
+network_gke-1_primary_ip_cidr_range = ""
+network_gke-2_primary_ip_cidr_range = ""
 # CIDR for the IPs that would be assigned to the master nodes:
-network_gke-1_master_ipv4_cidr_block = "172.16.0.0/28"
-network_gke-2_master_ipv4_cidr_block = "172.17.0.0/28"
+network_gke-1_master_ipv4_cidr_block = ""
+network_gke-2_master_ipv4_cidr_block = ""
 # CIDR for the IPs that would be assigned to the K8s services:
-network_gke-1_secondary_ip_range_svc = "10.60.0.0/20"
-network_gke-2_secondary_ip_range_svc = "10.80.0.0/20"
+network_gke-1_secondary_ip_range_svc = ""
+network_gke-2_secondary_ip_range_svc = ""
 # CIDR for the IPs that would be assigned to the K8s pods:
-network_gke-1_secondary_ip_range_pods = "10.56.0.0/14"
-network_gke-2_secondary_ip_range_pods = "10.76.0.0/14"
+network_gke-1_secondary_ip_range_pods = ""
+network_gke-2_secondary_ip_range_pods = ""
 
 #--------------------------------------------------------------
 # GKE
 #--------------------------------------------------------------
 # The GKE cluster name:
-cluster_gke-1_name = "gke-1"
-cluster_gke-2_name = "gke-2"
+cluster_gke-1_name = ""
+cluster_gke-2_name = ""
 # The GKE cluster location (zone or region, based on the cluster type):
-cluster_gke-1_location = "us-central1"
-cluster_gke-2_location = "northamerica-northeast1"
+cluster_gke-1_location = ""
+cluster_gke-2_location = ""
 # The GKE cluster region:
-cluster_gke-1_region = "us-central1"
-cluster_gke-2_region = "northamerica-northeast1"
+cluster_gke-1_region = ""
+cluster_gke-2_region = ""
 # The locations (zones) for the cluster' nodes:
-cluster_gke-1_node_locations = ["us-central1-a", "us-central1-b", "us-central1-c"]
-cluster_gke-2_node_locations = ["northamerica-northeast1-a", "northamerica-northeast1-b", "northamerica-northeast1-c"]
+cluster_gke-1_node_locations = []
+cluster_gke-2_node_locations = []
 
 # Whether enable or not the GKE autoscaling feature
 # https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler
@@ -64,7 +64,7 @@ cluster_default_max_pods_per_node = 30
 # https://cloud.google.com/blog/products/containers-kubernetes/introducing-workload-identity-better-authentication-for-your-gke-applications
 cluster_workload_identity_enabled = true
 # The namespaces that should be created and configured to use GKE Workload Identity feature:
-cluster_k8s_namespaces = ["gke-1", "gke-2"]
+cluster_k8s_namespaces = []
 # Whether enable or not the GKE istio plugin.
 # https://cloud.google.com/istio/docs/istio-on-gke/overview
 cluster_istio_config = false
@@ -156,7 +156,7 @@ helm_repository = "https://helm.pingidentity.com/"
 # The Ping Identity chart to be installed:
 helm_chart = "ping-devops"
 # The K8s namespace where Ping Identity chart should be installed:
-helm_namespace = "test"
+helm_namespace = ""
 #--------------------------------------------------------------
 # Bastion
 #--------------------------------------------------------------
@@ -181,27 +181,24 @@ lb_exposed_port = 443
 # The Network Endpoint Group that was created when the appropriate K8s service was exposed.
 # https://cloud.google.com/load-balancing/docs/https#load_balancing_using_multiple_backend_types
 # https://cloud.google.com/load-balancing/docs/negs/zonal-neg-concepts
-lb_neg_name = "pingdataconsole-https-neg"
+lb_neg_name = ""
 # The service name that should be exposed:
-lb_service_name = "pingdataconsole"
-# The ssl certificate and private key
-private_key = "certs/vetal.net.ua.key"
-certificate = "certs/vetal.net.ua.crt"
+lb_service_name = ""
 #--------------------------------------------------------------
 # K8s
 #--------------------------------------------------------------
 # Whether enable or not the k8s module that should create the services to be exposed through the LB:
-k8s_enabled = true
+k8s_enabled = false
 # The name of the service instance that should be in the annotation block of the K8s service:
-k8s_svc_instance = "pf"
+k8s_svc_instance = ""
 # Whether enable or not creation of the K8s services within this module:
 k8s_svc_enabled = false
 # The appropriate namespaces where the K8s services should be created:
-k8s_gke-1_svc_namespaces = ["gke-1"]
-k8s_gke-2_svc_namespaces = ["gke-2"]
+k8s_gke-1_svc_namespaces = []
+k8s_gke-2_svc_namespaces = []
 #--------------------------------------------------------------
 # MCS
 #--------------------------------------------------------------
 # Whether enable or not the MCS GCP feature.
 # https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-multi-cluster-services
-mcs_enabled = true
+mcs_enabled = false

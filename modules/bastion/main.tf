@@ -14,9 +14,9 @@
 
 locals {
   # The GCP IAM service account name that would be used for the bastion host:
-  bastion_sa            = "${var.cluster_name}-bastion-sa"
+  bastion_sa = "${var.cluster_name}-bastion-sa"
   # The subnetwork name for the bastion host:
-  subnetwork_name       = "${var.cluster_name}-bastion-subnet"
+  subnetwork_name = "${var.cluster_name}-bastion-subnet"
   # The VM name:
   compute_instance_name = "${var.cluster_name}-bastion-host"
 }

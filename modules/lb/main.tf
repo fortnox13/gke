@@ -56,6 +56,10 @@ resource "google_compute_backend_service" "backend_service" {
   project    = var.gcp_project_id
   enable_cdn = true
 
+  lifecycle {
+    ignore_changes = all
+  }
+
   health_checks = [google_compute_health_check.health_check.id]
 
   session_affinity = "CLIENT_IP"
@@ -100,8 +104,8 @@ resource "google_compute_ssl_certificate" "ssl_certificate" {
   #
   name        = "${var.service_name}-certificate"
   project     = var.gcp_project_id
-  private_key = file("certs/vetal.net.ua.key")
-  certificate = file("certs/vetal.net.ua.crt")
+  private_key = file(var.private_key)
+  certificate = file(var.certificate)
 }
 
 resource "google_compute_target_https_proxy" "target_https_proxy" {

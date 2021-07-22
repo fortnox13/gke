@@ -18,6 +18,12 @@ locals {
   annotation = "{\"exposed_ports\": {\"${var.lb_exposed_port}\": {\"name\": \"${var.lb_neg_name}\"}}}"
 }
 
+resource "time_sleep" "wait" {
+  # We need to wait up to 10 minutes that all NEGs that were created in k8s module could be
+  # available for adding them to the backend service
+  create_duration = "3m"
+}
+
 resource "kubernetes_namespace" "k8s_namespace" {
   for_each = var.namespaces
 
@@ -32,6 +38,8 @@ resource "kubernetes_namespace" "k8s_namespace" {
 
     name = each.value
   }
+
+  depends_on = [time_sleep.wait]
 }
 
 resource "kubernetes_secret" "devops-secret" {
@@ -68,7 +76,7 @@ resource "kubernetes_service" "kubernetes_service" {
 
   metadata {
     namespace = each.value
-    name      = "${var.svc_instance}-pingdataconsole-https"
+    name      = "${var.svc_instance}-${var.lb_service_name}-https"
 
     annotations = {
       "cloud.google.com/neg" = local.annotation
@@ -76,7 +84,7 @@ resource "kubernetes_service" "kubernetes_service" {
       "meta.helm.sh/release-namespace" : each.value
       "app.kubernetes.io/instance" : var.svc_instance
       "app.kubernetes.io/managed-by" : "Helm"
-      "app.kubernetes.io/name" : "pingdataconsole"
+      "app.kubernetes.io/name" : var.lb_service_name
       "helm.sh/chart" : "ping-devops-0.6.3"
     }
   }
@@ -84,13 +92,13 @@ resource "kubernetes_service" "kubernetes_service" {
   spec {
     selector = {
       "app.kubernetes.io/instance" : var.svc_instance
-      "app.kubernetes.io/name" : "pingdataconsole"
+      "app.kubernetes.io/name" : var.lb_service_name
     }
 
     session_affinity = "ClientIP"
 
     port {
-      name        = "pingfederate-https"
+      name        = "${var.lb_service_name}-https-port"
       protocol    = "TCP"
       port        = 443
       target_port = 8443

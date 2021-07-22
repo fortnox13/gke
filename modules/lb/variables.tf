@@ -16,6 +16,12 @@ variable "lb_neg_name" {
   description = "lb_neg_name"
 }
 
+variable "lb_service_name" {
+  type        = string
+  default     = ""
+  description = "lb_service_name"
+}
+
 variable "cluster_gke-1_name" {
   type        = string
   default     = ""
@@ -44,4 +50,16 @@ variable "zones" {
   type        = set(string)
   default     = []
   description = "zones"
+}
+
+variable "private_key" {
+  description = "private_key"
+  default     = ""
+  type        = string
+}
+
+variable "certificate" {
+  description = "certificate"
+  default     = ""
+  type        = string
 }

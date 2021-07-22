@@ -88,10 +88,11 @@ module "k8s-gke-1" {
 
   lb_exposed_port = var.lb_exposed_port
   lb_neg_name     = var.lb_neg_name
+  lb_service_name = var.lb_service_name
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_user_plain     = var.ping_devops_user_plain
   ping_devops_key_encrypted  = var.ping_devops_key_encrypted
   ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
@@ -112,10 +113,11 @@ module "k8s-gke-2" {
 
   lb_exposed_port = var.lb_exposed_port
   lb_neg_name     = var.lb_neg_name
+  lb_service_name = var.lb_service_name
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_user_plain     = var.ping_devops_user_plain
   ping_devops_key_encrypted  = var.ping_devops_key_encrypted
   ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
@@ -219,6 +221,9 @@ module "lb" {
   service_name    = var.lb_service_name
   gcp_project_id  = var.gcp_project_id
 
+  private_key = var.private_key
+  certificate = var.certificate
+
   zones = flatten([
     var.cluster_gke-1_node_locations,
     var.cluster_gke-2_node_locations
@@ -274,8 +279,5 @@ module "mcs" {
   destroy_cmd_entrypoint = "${path.module}/scripts/mcs_disable.sh"
   destroy_cmd_body       = "${module.gke-1.cluster_name} ${var.cluster_gke-1_location} ${module.gke-2.cluster_name} ${var.cluster_gke-2_location}"
 
-  depends_on = [
-    module.k8s-gke-1,
-    module.k8s-gke-2
-  ]
+  module_depends_on = [module.lb]
 }

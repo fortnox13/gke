@@ -353,3 +353,15 @@ variable "k8s_gke-2_svc_namespaces" {
   default     = []
   description = "k8s_gke-2_svc_namespaces"
 }
+
+variable "private_key" {
+  description = "private_key"
+  default     = ""
+  type        = string
+}
+
+variable "certificate" {
+  description = "certificate"
+  default     = ""
+  type        = string
+}

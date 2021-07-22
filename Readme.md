@@ -41,7 +41,8 @@
      }
    }`
    
-    Edit your tfvars file by changing the gcp_project_id variable
+    Edit your tfvars file in the config dir to fit your needs. Please use
+    template.tfvars as a reference
    
 6. Enable the GCP API's that will be used during the deployment:
     `bash ./scripts/general_apis_to_be_enabled.sh PROJECT_ID`
@@ -49,7 +50,9 @@
    in your GKE clusters:
    `bash ./scripts/mcs_apis_to_be_enabled.sh PROJECT_ID`
 
-7. Issue `terraform init` command to initialize terraform.
+7. Download terraform 14.11 here https://releases.hashicorp.com/terraform/0.14.11/
+   and use this version to deploy the infrastructure.
+    Issue `terraform init` command to initialize terraform.
 
 8. Create new workspace for terraform:
    
@@ -81,8 +84,8 @@
     
    `terraform destroy -var-file=./config/YOUR_TFVARS_FILE`
     
-    * Firstly you need to delete all namespaces terraform resources from
-    terraform state. For example:
+    * In most cases you would need to delete all namespaces terraform
+      resources from terraform state. For example:
     
     `terraform state rm \
     module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace[\"gke-1\"] \
@@ -95,3 +98,6 @@
    Then you MUST delete all resources that were not provisioned via
    your terraform code but set as dependencies for all resources
    in your terraform state.
+
+    The same approach could be used in case of any terraform resource
+    for any reasons could not be deleted.
