@@ -100,8 +100,8 @@ resource "google_compute_ssl_certificate" "ssl_certificate" {
   #
   name        = "${var.service_name}-certificate"
   project     = var.gcp_project_id
-  private_key = file("certs/vetal.net.ua.key")
-  certificate = file("certs/vetal.net.ua.crt")
+  private_key = file("certs/domain.key")
+  certificate = file("certs/domain.crt")
 }
 
 resource "google_compute_target_https_proxy" "target_https_proxy" {
