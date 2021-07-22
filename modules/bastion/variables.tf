@@ -4,6 +4,11 @@ variable "gcp_project_id" {
   description = "GCP project id"
 }
 
+variable "members" {
+  description = "List of members in the standard GCP form: user:{email}, serviceAccount:{email}, group:{email}"
+  type        = list(string)
+}
+
 variable "primary_ip_cidr_range" {
   type        = string
   default     = ""

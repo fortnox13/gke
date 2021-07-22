@@ -16,10 +16,12 @@ locals {
   # The GCP IAM service account name that would be used for the bastion host:
   bastion_sa            = "${var.cluster_name}-bastion-sa"
   # The subnetwork name for the bastion host:
-  subnetwork_name       = "${var.cluster_name}-bastion-subnet"
+  #subnetwork_name       = "${var.cluster_name}-bastion-subnet"
   # The VM name:
   compute_instance_name = "${var.cluster_name}-bastion-host"
+  #rolesList = ["roles/storage.admin","roles/iam.serviceAccountUser","roles/compute.instanceAdmin"]
 }
+
 
 
 resource "google_service_account" "bastion_sa" {
@@ -31,7 +33,10 @@ resource "google_service_account" "bastion_sa" {
 resource "google_project_iam_member" "bastion_sa_iam" {
   for_each = toset([
     "roles/container.admin",
-    "roles/container.clusterAdmin"
+    "roles/container.clusterAdmin",
+    "roles/compute.instanceAdmin",
+    "roles/iap.tunnelResourceAccessor",
+    "roles/iam.serviceAccountUser"
   ])
 
   project = var.gcp_project_id
@@ -39,13 +44,13 @@ resource "google_project_iam_member" "bastion_sa_iam" {
   member  = "serviceAccount:${google_service_account.bastion_sa.email}"
 }
 
-resource "google_compute_subnetwork" "subnetwork" {
-  name          = local.subnetwork_name
-  ip_cidr_range = var.primary_ip_cidr_range
-  project       = var.gcp_project_id
-  region        = var.gcp_region
-  network       = var.network
-}
+# resource "google_compute_subnetwork" "subnetwork" {
+#   name          = local.subnetwork_name
+#   ip_cidr_range = var.primary_ip_cidr_range
+#   project       = var.gcp_project_id
+#   region        = var.gcp_region
+#   network       = var.network
+# }
 
 resource "google_compute_instance" "bastion" {
   project      = var.gcp_project_id
@@ -53,6 +58,9 @@ resource "google_compute_instance" "bastion" {
   machine_type = var.machine_type
   zone         = var.gcp_zone
 
+  labels = {
+      instance = "bastion"
+  }
   tags = ["bastion"]
 
   boot_disk {
@@ -61,12 +69,16 @@ resource "google_compute_instance" "bastion" {
     }
   }
 
+    metadata = {
+    enable-oslogin = "TRUE"
+  }
+
   scratch_disk {
     interface = "SCSI"
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.subnetwork.self_link
+    subnetwork = "projects/${var.gcp_project_id}/regions/${var.gcp_region}/subnetworks/${var.cluster_name}-subnet"
   }
 
   # Next script should configure the bastion host: install all apps, do all configs etc
@@ -76,4 +88,23 @@ resource "google_compute_instance" "bastion" {
     email  = google_service_account.bastion_sa.email
     scopes = ["cloud-platform"]
   }
+}
+
+# resource "google_service_account_iam_binding" "sa_user" {
+#   service_account_id = google_service_account.bastion_sa.id
+#   role               = "roles/iam.serviceAccountUser"
+#   members            = var.members
+# }
+
+module "iap_tunneling" {
+  source                     = "../iap-tunneling"
+  fw_name_allow_ssh_from_iap = "test-allow-ssh-from-iap-to-tunnel-${local.compute_instance_name}"
+  project                    = var.gcp_project_id
+  network                    = var.network
+  service_accounts           = [google_service_account.bastion_sa.email]
+  instances = [{
+    name = google_compute_instance.bastion.name
+    zone = var.gcp_zone
+  }]
+  members = var.members
 }

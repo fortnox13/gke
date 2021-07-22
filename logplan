@@ -1,0 +1,2211 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.bastion-1[0].google_compute_instance.bastion[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_instance" "bastion" {
+      [32m+[0m [0m[1m[0mcan_ip_forward[0m[0m          = false
+      [32m+[0m [0m[1m[0mcpu_platform[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcurrent_status[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdeletion_protection[0m[0m     = false
+      [32m+[0m [0m[1m[0mguest_accelerator[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mlabel_fingerprint[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlabels[0m[0m                  = {
+          [32m+[0m [0m"instance" = "bastion"
+        }
+      [32m+[0m [0m[1m[0mmachine_type[0m[0m            = "n1-standard-1"
+      [32m+[0m [0m[1m[0mmetadata[0m[0m                = {
+          [32m+[0m [0m"enable-oslogin" = "TRUE"
+        }
+      [32m+[0m [0m[1m[0mmetadata_fingerprint[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mmetadata_startup_script[0m[0m = <<-EOT
+            sudo apt-get update && sudo apt-get install -y apt-transport-https
+            curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+            echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+            sudo apt-get update
+            sudo apt-get install -y kubectl
+        EOT
+      [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                    = "gke-1-bastion-host"
+      [32m+[0m [0m[1m[0mproject[0m[0m                 = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                    = [
+          [32m+[0m [0m"bastion",
+        ]
+      [32m+[0m [0m[1m[0mtags_fingerprint[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                    = "us-central1-a"
+
+      [32m+[0m [0mboot_disk {
+          [32m+[0m [0m[1m[0mauto_delete[0m[0m                = true
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_encryption_key_sha256[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_self_link[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mmode[0m[0m                       = "READ_WRITE"
+          [32m+[0m [0m[1m[0msource[0m[0m                     = (known after apply)
+
+          [32m+[0m [0minitialize_params {
+              [32m+[0m [0m[1m[0mimage[0m[0m  = "ubuntu-os-cloud/ubuntu-1804-lts"
+              [32m+[0m [0m[1m[0mlabels[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0msize[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mtype[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mconfidential_instance_config {
+          [32m+[0m [0m[1m[0menable_confidential_compute[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mname[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_ip[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0msubnetwork[0m[0m         = "projects/testing-17-320612/regions/us-central1/networks/gke-1-subnet"
+          [32m+[0m [0m[1m[0msubnetwork_project[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mreservation_affinity {
+          [32m+[0m [0m[1m[0mtype[0m[0m = (known after apply)
+
+          [32m+[0m [0mspecific_reservation {
+              [32m+[0m [0m[1m[0mkey[0m[0m    = (known after apply)
+              [32m+[0m [0m[1m[0mvalues[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mscheduling {
+          [32m+[0m [0m[1m[0mautomatic_restart[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmin_node_cpus[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mon_host_maintenance[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m         = (known after apply)
+
+          [32m+[0m [0mnode_affinities {
+              [32m+[0m [0m[1m[0mkey[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0moperator[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mvalues[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mscratch_disk {
+          [32m+[0m [0m[1m[0minterface[0m[0m = "SCSI"
+        }
+
+      [32m+[0m [0mservice_account {
+          [32m+[0m [0m[1m[0memail[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mscopes[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+            ]
+        }
+    }
+
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/compute.instanceAdmin"
+    }
+
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/container.admin"
+    }
+
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/container.clusterAdmin"
+    }
+
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/iap.tunnelResourceAccessor"
+    }
+
+[1m  # module.bastion-1[0].google_service_account.bastion_sa[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "bastion_sa" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-1-bastion-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "Bastion host Service Account"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.bastion-1[0].google_service_account_iam_binding.sa_user[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_binding" "sa_user" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmembers[0m[0m            = [
+          [32m+[0m [0m"user:nikitadem13@gmail.com",
+        ]
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.serviceAccountUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.bastion-2[0].google_compute_instance.bastion[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_instance" "bastion" {
+      [32m+[0m [0m[1m[0mcan_ip_forward[0m[0m          = false
+      [32m+[0m [0m[1m[0mcpu_platform[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcurrent_status[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdeletion_protection[0m[0m     = false
+      [32m+[0m [0m[1m[0mguest_accelerator[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mlabel_fingerprint[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlabels[0m[0m                  = {
+          [32m+[0m [0m"instance" = "bastion"
+        }
+      [32m+[0m [0m[1m[0mmachine_type[0m[0m            = "n1-standard-1"
+      [32m+[0m [0m[1m[0mmetadata[0m[0m                = {
+          [32m+[0m [0m"enable-oslogin" = "TRUE"
+        }
+      [32m+[0m [0m[1m[0mmetadata_fingerprint[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mmetadata_startup_script[0m[0m = <<-EOT
+            sudo apt-get update && sudo apt-get install -y apt-transport-https
+            curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+            echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+            sudo apt-get update
+            sudo apt-get install -y kubectl
+        EOT
+      [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                    = "gke-2-bastion-host"
+      [32m+[0m [0m[1m[0mproject[0m[0m                 = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                    = [
+          [32m+[0m [0m"bastion",
+        ]
+      [32m+[0m [0m[1m[0mtags_fingerprint[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                    = "northamerica-northeast1-a"
+
+      [32m+[0m [0mboot_disk {
+          [32m+[0m [0m[1m[0mauto_delete[0m[0m                = true
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_encryption_key_sha256[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_self_link[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mmode[0m[0m                       = "READ_WRITE"
+          [32m+[0m [0m[1m[0msource[0m[0m                     = (known after apply)
+
+          [32m+[0m [0minitialize_params {
+              [32m+[0m [0m[1m[0mimage[0m[0m  = "ubuntu-os-cloud/ubuntu-1804-lts"
+              [32m+[0m [0m[1m[0mlabels[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0msize[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mtype[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mconfidential_instance_config {
+          [32m+[0m [0m[1m[0menable_confidential_compute[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mname[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_ip[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0msubnetwork[0m[0m         = "projects/testing-17-320612/regions/northamerica-northeast1/networks/gke-2-subnet"
+          [32m+[0m [0m[1m[0msubnetwork_project[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mreservation_affinity {
+          [32m+[0m [0m[1m[0mtype[0m[0m = (known after apply)
+
+          [32m+[0m [0mspecific_reservation {
+              [32m+[0m [0m[1m[0mkey[0m[0m    = (known after apply)
+              [32m+[0m [0m[1m[0mvalues[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mscheduling {
+          [32m+[0m [0m[1m[0mautomatic_restart[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmin_node_cpus[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mon_host_maintenance[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m         = (known after apply)
+
+          [32m+[0m [0mnode_affinities {
+              [32m+[0m [0m[1m[0mkey[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0moperator[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mvalues[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mscratch_disk {
+          [32m+[0m [0m[1m[0minterface[0m[0m = "SCSI"
+        }
+
+      [32m+[0m [0mservice_account {
+          [32m+[0m [0m[1m[0memail[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mscopes[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+            ]
+        }
+    }
+
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/compute.instanceAdmin"
+    }
+
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/container.admin"
+    }
+
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/container.clusterAdmin"
+    }
+
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/iap.tunnelResourceAccessor"
+    }
+
+[1m  # module.bastion-2[0].google_service_account.bastion_sa[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "bastion_sa" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-2-bastion-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "Bastion host Service Account"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.bastion-2[0].google_service_account_iam_binding.sa_user[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_binding" "sa_user" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmembers[0m[0m            = [
+          [32m+[0m [0m"user:nikitadem13@gmail.com",
+        ]
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.serviceAccountUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.gke-1.google_compute_subnetwork.subnetwork[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mfingerprint[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_address[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mip_cidr_range[0m[0m              = "10.162.0.0/20"
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "gke-1-subnet"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ipv6_google_access[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m                    = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m                     = "us-central1"
+      [32m+[0m [0m[1m[0msecondary_ip_range[0m[0m         = [
+          [32m+[0m [0m{
+              [32m+[0m [0mip_cidr_range = "10.60.0.0/20"
+              [32m+[0m [0mrange_name    = "services-range"
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mip_cidr_range = "10.56.0.0/14"
+              [32m+[0m [0mrange_name    = "pod-ranges"
+            },
+        ]
+      [32m+[0m [0m[1m[0mself_link[0m[0m                  = (known after apply)
+    }
+
+[1m  # module.gke-1.google_container_cluster.cluster[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_container_cluster" "cluster" {
+      [32m+[0m [0m[1m[0mcluster_ipv4_cidr[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdatapath_provider[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_max_pods_per_node[0m[0m   = 30
+      [32m+[0m [0m[1m[0menable_binary_authorization[0m[0m = false
+      [32m+[0m [0m[1m[0menable_intranode_visibility[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0menable_kubernetes_alpha[0m[0m     = false
+      [32m+[0m [0m[1m[0menable_l4_ilb_subsetting[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_legacy_abac[0m[0m          = false
+      [32m+[0m [0m[1m[0menable_shielded_nodes[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0menable_tpu[0m[0m                  = false
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0minitial_node_count[0m[0m          = 1
+      [32m+[0m [0m[1m[0minstance_group_urls[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mlabel_fingerprint[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m                    = "us-central1"
+      [32m+[0m [0m[1m[0mlogging_service[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mmaster_version[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mmonitoring_service[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                        = "gke-1"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mnetworking_mode[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnode_locations[0m[0m              = [
+          [32m+[0m [0m"us-central1-a",
+          [32m+[0m [0m"us-central1-b",
+          [32m+[0m [0m"us-central1-c",
+        ]
+      [32m+[0m [0m[1m[0mnode_version[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0moperation[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ipv6_google_access[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m                     = "testing-17-320612"
+      [32m+[0m [0m[1m[0mremove_default_node_pool[0m[0m    = true
+      [32m+[0m [0m[1m[0mself_link[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mservices_ipv4_cidr[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mtpu_ipv4_cidr_block[0m[0m         = (known after apply)
+
+      [32m+[0m [0maddons_config {
+          [32m+[0m [0mcloudrun_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m           = (known after apply)
+              [32m+[0m [0m[1m[0mload_balancer_type[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mconfig_connector_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mdns_cache_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mgce_persistent_disk_csi_driver_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mhorizontal_pod_autoscaling {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mhttp_load_balancing {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mistio_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = false
+            }
+
+          [32m+[0m [0mkalm_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mnetwork_policy_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = false
+            }
+        }
+
+      [32m+[0m [0mauthenticator_groups_config {
+          [32m+[0m [0m[1m[0msecurity_group[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mcluster_autoscaling {
+          [32m+[0m [0m[1m[0mautoscaling_profile[0m[0m = "BALANCED"
+          [32m+[0m [0m[1m[0menabled[0m[0m             = true
+
+          [32m+[0m [0mauto_provisioning_defaults {
+              [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m     = (known after apply)
+              [32m+[0m [0m[1m[0mservice_account[0m[0m  = (known after apply)
+            }
+
+          [32m+[0m [0mresource_limits {
+              [32m+[0m [0m[1m[0mmaximum[0m[0m       = 24
+              [32m+[0m [0m[1m[0mminimum[0m[0m       = 8
+              [32m+[0m [0m[1m[0mresource_type[0m[0m = "memory"
+            }
+          [32m+[0m [0mresource_limits {
+              [32m+[0m [0m[1m[0mmaximum[0m[0m       = 6
+              [32m+[0m [0m[1m[0mminimum[0m[0m       = 3
+              [32m+[0m [0m[1m[0mresource_type[0m[0m = "cpu"
+            }
+        }
+
+      [32m+[0m [0mcluster_telemetry {
+          [32m+[0m [0m[1m[0mtype[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mconfidential_nodes {
+          [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mdatabase_encryption {
+          [32m+[0m [0m[1m[0mkey_name[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstate[0m[0m    = (known after apply)
+        }
+
+      [32m+[0m [0mdefault_snat_status {
+          [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mip_allocation_policy {
+          [32m+[0m [0m[1m[0mcluster_ipv4_cidr_block[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mcluster_secondary_range_name[0m[0m  = "services-range"
+          [32m+[0m [0m[1m[0mservices_ipv4_cidr_block[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mservices_secondary_range_name[0m[0m = "pod-ranges"
+        }
+
+      [32m+[0m [0mmaintenance_policy {
+          [32m+[0m [0mdaily_maintenance_window {
+              [32m+[0m [0m[1m[0mduration[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mstart_time[0m[0m = "01:00"
+            }
+        }
+
+      [32m+[0m [0mmaster_auth {
+          [32m+[0m [0m[1m[0mclient_certificate[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mclient_key[0m[0m             = (sensitive value)
+          [32m+[0m [0m[1m[0mcluster_ca_certificate[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mpassword[0m[0m               = (sensitive value)
+          [32m+[0m [0m[1m[0musername[0m[0m               = (known after apply)
+
+          [32m+[0m [0mclient_certificate_config {
+              [32m+[0m [0m[1m[0missue_client_certificate[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mmaster_authorized_networks_config {
+          [32m+[0m [0mcidr_blocks {
+              [32m+[0m [0m[1m[0mcidr_block[0m[0m   = "0.0.0.0/0"
+              [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "master authorized networks config"
+            }
+        }
+
+      [32m+[0m [0mnetwork_policy {
+          [32m+[0m [0m[1m[0menabled[0m[0m = true
+        }
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mboot_disk_kms_key[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+          [32m+[0m [0mephemeral_storage_config {
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mkubelet_config {
+              [32m+[0m [0m[1m[0mcpu_cfs_quota[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mcpu_cfs_quota_period[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mcpu_manager_policy[0m[0m   = (known after apply)
+            }
+
+          [32m+[0m [0mlinux_node_config {
+              [32m+[0m [0m[1m[0msysctls[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0msandbox_config {
+              [32m+[0m [0m[1m[0msandbox_type[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mname_prefix[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m             = (known after apply)
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = (known after apply)
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mboot_disk_kms_key[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+              [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m  = (known after apply)
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = (known after apply)
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mtags[0m[0m              = (known after apply)
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+              [32m+[0m [0mephemeral_storage_config {
+                  [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0mkubelet_config {
+                  [32m+[0m [0m[1m[0mcpu_cfs_quota[0m[0m        = (known after apply)
+                  [32m+[0m [0m[1m[0mcpu_cfs_quota_period[0m[0m = (known after apply)
+                  [32m+[0m [0m[1m[0mcpu_manager_policy[0m[0m   = (known after apply)
+                }
+
+              [32m+[0m [0mlinux_node_config {
+                  [32m+[0m [0m[1m[0msysctls[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0msandbox_config {
+                  [32m+[0m [0m[1m[0msandbox_type[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = (known after apply)
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = (known after apply)
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mnotification_config {
+          [32m+[0m [0mpubsub {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mtopic[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mprivate_cluster_config {
+          [32m+[0m [0m[1m[0menable_private_nodes[0m[0m   = true
+          [32m+[0m [0m[1m[0mmaster_ipv4_cidr_block[0m[0m = "172.16.0.0/28"
+          [32m+[0m [0m[1m[0mpeering_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mprivate_endpoint[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mpublic_endpoint[0m[0m        = (known after apply)
+
+          [32m+[0m [0mmaster_global_access_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mrelease_channel {
+          [32m+[0m [0m[1m[0mchannel[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mworkload_identity_config {
+          [32m+[0m [0m[1m[0midentity_namespace[0m[0m = "testing-17-320612.svc.id.goog"
+        }
+    }
+
+[1m  # module.gke-1.google_container_node_pool.cluster_node_pool[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_container_node_pool" "cluster_node_pool" {
+      [32m+[0m [0m[1m[0mcluster[0m[0m             = "gke-1"
+      [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m            = "us-central1"
+      [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                = "gke-1-node-pool"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mnode_count[0m[0m          = 1
+      [32m+[0m [0m[1m[0mnode_locations[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0moperation[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m             = "testing-17-320612"
+      [32m+[0m [0m[1m[0mversion[0m[0m             = (known after apply)
+
+      [32m+[0m [0mautoscaling {
+          [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 2
+          [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 1
+        }
+
+      [32m+[0m [0mmanagement {
+          [32m+[0m [0m[1m[0mauto_repair[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+              [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+              [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+              [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+              [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+              [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+            ]
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+            }
+        }
+
+      [32m+[0m [0mupgrade_settings {
+          [32m+[0m [0m[1m[0mmax_surge[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/source.reader"
+    }
+
+[1m  # module.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/storage.objectViewer"
+    }
+
+[1m  # module.gke-1.google_service_account.gke_nodes_sa[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "gke_nodes_sa" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-1-nodes-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "Service Account that belongs to the GKE node pool"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.gke-2.google_compute_subnetwork.subnetwork[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mfingerprint[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_address[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mip_cidr_range[0m[0m              = "10.128.0.0/20"
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "gke-2-subnet"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ipv6_google_access[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m                    = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m                     = "northamerica-northeast1"
+      [32m+[0m [0m[1m[0msecondary_ip_range[0m[0m         = [
+          [32m+[0m [0m{
+              [32m+[0m [0mip_cidr_range = "10.80.0.0/20"
+              [32m+[0m [0mrange_name    = "services-range"
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mip_cidr_range = "10.76.0.0/14"
+              [32m+[0m [0mrange_name    = "pod-ranges"
+            },
+        ]
+      [32m+[0m [0m[1m[0mself_link[0m[0m                  = (known after apply)
+    }
+
+[1m  # module.gke-2.google_container_cluster.cluster[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_container_cluster" "cluster" {
+      [32m+[0m [0m[1m[0mcluster_ipv4_cidr[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdatapath_provider[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_max_pods_per_node[0m[0m   = 30
+      [32m+[0m [0m[1m[0menable_binary_authorization[0m[0m = false
+      [32m+[0m [0m[1m[0menable_intranode_visibility[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0menable_kubernetes_alpha[0m[0m     = false
+      [32m+[0m [0m[1m[0menable_l4_ilb_subsetting[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_legacy_abac[0m[0m          = false
+      [32m+[0m [0m[1m[0menable_shielded_nodes[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0menable_tpu[0m[0m                  = false
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0minitial_node_count[0m[0m          = 1
+      [32m+[0m [0m[1m[0minstance_group_urls[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mlabel_fingerprint[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m                    = "northamerica-northeast1"
+      [32m+[0m [0m[1m[0mlogging_service[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mmaster_version[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mmonitoring_service[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                        = "gke-2"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mnetworking_mode[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnode_locations[0m[0m              = [
+          [32m+[0m [0m"northamerica-northeast1-a",
+          [32m+[0m [0m"northamerica-northeast1-b",
+          [32m+[0m [0m"northamerica-northeast1-c",
+        ]
+      [32m+[0m [0m[1m[0mnode_version[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0moperation[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ipv6_google_access[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m                     = "testing-17-320612"
+      [32m+[0m [0m[1m[0mremove_default_node_pool[0m[0m    = true
+      [32m+[0m [0m[1m[0mself_link[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mservices_ipv4_cidr[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mtpu_ipv4_cidr_block[0m[0m         = (known after apply)
+
+      [32m+[0m [0maddons_config {
+          [32m+[0m [0mcloudrun_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m           = (known after apply)
+              [32m+[0m [0m[1m[0mload_balancer_type[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mconfig_connector_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mdns_cache_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mgce_persistent_disk_csi_driver_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mhorizontal_pod_autoscaling {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mhttp_load_balancing {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mistio_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = false
+            }
+
+          [32m+[0m [0mkalm_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mnetwork_policy_config {
+              [32m+[0m [0m[1m[0mdisabled[0m[0m = false
+            }
+        }
+
+      [32m+[0m [0mauthenticator_groups_config {
+          [32m+[0m [0m[1m[0msecurity_group[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mcluster_autoscaling {
+          [32m+[0m [0m[1m[0mautoscaling_profile[0m[0m = "BALANCED"
+          [32m+[0m [0m[1m[0menabled[0m[0m             = true
+
+          [32m+[0m [0mauto_provisioning_defaults {
+              [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m     = (known after apply)
+              [32m+[0m [0m[1m[0mservice_account[0m[0m  = (known after apply)
+            }
+
+          [32m+[0m [0mresource_limits {
+              [32m+[0m [0m[1m[0mmaximum[0m[0m       = 24
+              [32m+[0m [0m[1m[0mminimum[0m[0m       = 8
+              [32m+[0m [0m[1m[0mresource_type[0m[0m = "memory"
+            }
+          [32m+[0m [0mresource_limits {
+              [32m+[0m [0m[1m[0mmaximum[0m[0m       = 6
+              [32m+[0m [0m[1m[0mminimum[0m[0m       = 3
+              [32m+[0m [0m[1m[0mresource_type[0m[0m = "cpu"
+            }
+        }
+
+      [32m+[0m [0mcluster_telemetry {
+          [32m+[0m [0m[1m[0mtype[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mconfidential_nodes {
+          [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mdatabase_encryption {
+          [32m+[0m [0m[1m[0mkey_name[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstate[0m[0m    = (known after apply)
+        }
+
+      [32m+[0m [0mdefault_snat_status {
+          [32m+[0m [0m[1m[0mdisabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mip_allocation_policy {
+          [32m+[0m [0m[1m[0mcluster_ipv4_cidr_block[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mcluster_secondary_range_name[0m[0m  = "services-range"
+          [32m+[0m [0m[1m[0mservices_ipv4_cidr_block[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mservices_secondary_range_name[0m[0m = "pod-ranges"
+        }
+
+      [32m+[0m [0mmaintenance_policy {
+          [32m+[0m [0mdaily_maintenance_window {
+              [32m+[0m [0m[1m[0mduration[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mstart_time[0m[0m = "01:00"
+            }
+        }
+
+      [32m+[0m [0mmaster_auth {
+          [32m+[0m [0m[1m[0mclient_certificate[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mclient_key[0m[0m             = (sensitive value)
+          [32m+[0m [0m[1m[0mcluster_ca_certificate[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mpassword[0m[0m               = (sensitive value)
+          [32m+[0m [0m[1m[0musername[0m[0m               = (known after apply)
+
+          [32m+[0m [0mclient_certificate_config {
+              [32m+[0m [0m[1m[0missue_client_certificate[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mmaster_authorized_networks_config {
+          [32m+[0m [0mcidr_blocks {
+              [32m+[0m [0m[1m[0mcidr_block[0m[0m   = "0.0.0.0/0"
+              [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "master authorized networks config"
+            }
+        }
+
+      [32m+[0m [0mnetwork_policy {
+          [32m+[0m [0m[1m[0menabled[0m[0m = true
+        }
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mboot_disk_kms_key[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+          [32m+[0m [0mephemeral_storage_config {
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mkubelet_config {
+              [32m+[0m [0m[1m[0mcpu_cfs_quota[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mcpu_cfs_quota_period[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mcpu_manager_policy[0m[0m   = (known after apply)
+            }
+
+          [32m+[0m [0mlinux_node_config {
+              [32m+[0m [0m[1m[0msysctls[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0msandbox_config {
+              [32m+[0m [0m[1m[0msandbox_type[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mname_prefix[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m             = (known after apply)
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = (known after apply)
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mboot_disk_kms_key[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+              [32m+[0m [0m[1m[0mmin_cpu_platform[0m[0m  = (known after apply)
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = (known after apply)
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mtags[0m[0m              = (known after apply)
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+              [32m+[0m [0mephemeral_storage_config {
+                  [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0mkubelet_config {
+                  [32m+[0m [0m[1m[0mcpu_cfs_quota[0m[0m        = (known after apply)
+                  [32m+[0m [0m[1m[0mcpu_cfs_quota_period[0m[0m = (known after apply)
+                  [32m+[0m [0m[1m[0mcpu_manager_policy[0m[0m   = (known after apply)
+                }
+
+              [32m+[0m [0mlinux_node_config {
+                  [32m+[0m [0m[1m[0msysctls[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0msandbox_config {
+                  [32m+[0m [0m[1m[0msandbox_type[0m[0m = (known after apply)
+                }
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = (known after apply)
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = (known after apply)
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mnotification_config {
+          [32m+[0m [0mpubsub {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mtopic[0m[0m   = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mprivate_cluster_config {
+          [32m+[0m [0m[1m[0menable_private_nodes[0m[0m   = true
+          [32m+[0m [0m[1m[0mmaster_ipv4_cidr_block[0m[0m = "172.17.0.0/28"
+          [32m+[0m [0m[1m[0mpeering_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mprivate_endpoint[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mpublic_endpoint[0m[0m        = (known after apply)
+
+          [32m+[0m [0mmaster_global_access_config {
+              [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mrelease_channel {
+          [32m+[0m [0m[1m[0mchannel[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mworkload_identity_config {
+          [32m+[0m [0m[1m[0midentity_namespace[0m[0m = "testing-17-320612.svc.id.goog"
+        }
+    }
+
+[1m  # module.gke-2.google_container_node_pool.cluster_node_pool[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_container_node_pool" "cluster_node_pool" {
+      [32m+[0m [0m[1m[0mcluster[0m[0m             = "gke-2"
+      [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m            = "northamerica-northeast1"
+      [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                = "gke-2-node-pool"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mnode_count[0m[0m          = 1
+      [32m+[0m [0m[1m[0mnode_locations[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0moperation[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m             = "testing-17-320612"
+      [32m+[0m [0m[1m[0mversion[0m[0m             = (known after apply)
+
+      [32m+[0m [0mautoscaling {
+          [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 2
+          [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 1
+        }
+
+      [32m+[0m [0mmanagement {
+          [32m+[0m [0m[1m[0mauto_repair[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+              [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+              [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+              [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+              [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+              [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+            ]
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = (known after apply)
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = (known after apply)
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+            }
+        }
+
+      [32m+[0m [0mupgrade_settings {
+          [32m+[0m [0m[1m[0mmax_surge[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/source.reader"
+    }
+
+[1m  # module.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/storage.objectViewer"
+    }
+
+[1m  # module.gke-2.google_service_account.gke_nodes_sa[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "gke_nodes_sa" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-2-nodes-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "Service Account that belongs to the GKE node pool"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+      [32m+[0m [0m[1m[0mid[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {
+              [32m+[0m [0m"cluster" = "gke-1"
+            }
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+      [32m+[0m [0m[1m[0mid[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {
+              [32m+[0m [0m"cluster" = "gke-1"
+            }
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_secret" "devops-secret" {
+      [32m+[0m [0m[1m[0mbinary_data[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mdata[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtype[0m[0m        = "Opaque"
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"ping-devops.app-version" = "v0.7.3"
+              [32m+[0m [0m"ping-devops.user"        = ""
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "devops-secret"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_secret" "devops-secret" {
+      [32m+[0m [0m[1m[0mbinary_data[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mdata[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtype[0m[0m        = "Opaque"
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"ping-devops.app-version" = "v0.7.3"
+              [32m+[0m [0m"ping-devops.user"        = ""
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "devops-secret"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-1[0].kubernetes_service.kubernetes_service["gke-1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service" "kubernetes_service" {
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mwait_for_load_balancer[0m[0m = true
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"app.kubernetes.io/instance"     = "pf"
+              [32m+[0m [0m"app.kubernetes.io/managed-by"   = "Helm"
+              [32m+[0m [0m"app.kubernetes.io/name"         = "pingdataconsole"
+              [32m+[0m [0m"cloud.google.com/neg"           = jsonencode(
+                    {
+                      [32m+[0m [0mexposed_ports = {
+                          [32m+[0m [0m443 = {
+                              [32m+[0m [0mname = "pingdataconsole-https-neg"
+                            }
+                        }
+                    }
+                )
+              [32m+[0m [0m"helm.sh/chart"                  = "ping-devops-0.6.3"
+              [32m+[0m [0m"meta.helm.sh/release-name"      = "pf"
+              [32m+[0m [0m"meta.helm.sh/release-namespace" = "gke-1"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "pf-pingdataconsole-https"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+
+      [32m+[0m [0mspec {
+          [32m+[0m [0m[1m[0mcluster_ip[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mexternal_traffic_policy[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mhealth_check_node_port[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mpublish_not_ready_addresses[0m[0m = false
+          [32m+[0m [0m[1m[0mselector[0m[0m                    = {
+              [32m+[0m [0m"app.kubernetes.io/instance" = "pf"
+              [32m+[0m [0m"app.kubernetes.io/name"     = "pingdataconsole"
+            }
+          [32m+[0m [0m[1m[0msession_affinity[0m[0m            = "ClientIP"
+          [32m+[0m [0m[1m[0mtype[0m[0m                        = "ClusterIP"
+
+          [32m+[0m [0mport {
+              [32m+[0m [0m[1m[0mname[0m[0m        = "pingfederate-https"
+              [32m+[0m [0m[1m[0mnode_port[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mport[0m[0m        = 443
+              [32m+[0m [0m[1m[0mprotocol[0m[0m    = "TCP"
+              [32m+[0m [0m[1m[0mtarget_port[0m[0m = "8443"
+            }
+        }
+    }
+
+[1m  # module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+      [32m+[0m [0m[1m[0mid[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {
+              [32m+[0m [0m"cluster" = "gke-2"
+            }
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+      [32m+[0m [0m[1m[0mid[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {
+              [32m+[0m [0m"cluster" = "gke-2"
+            }
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_secret" "devops-secret" {
+      [32m+[0m [0m[1m[0mbinary_data[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mdata[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtype[0m[0m        = "Opaque"
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"ping-devops.app-version" = "v0.7.3"
+              [32m+[0m [0m"ping-devops.user"        = ""
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "devops-secret"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_secret" "devops-secret" {
+      [32m+[0m [0m[1m[0mbinary_data[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mdata[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtype[0m[0m        = "Opaque"
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"ping-devops.app-version" = "v0.7.3"
+              [32m+[0m [0m"ping-devops.user"        = ""
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "devops-secret"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.k8s-gke-2[0].kubernetes_service.kubernetes_service["gke-2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service" "kubernetes_service" {
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mwait_for_load_balancer[0m[0m = true
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"app.kubernetes.io/instance"     = "pf"
+              [32m+[0m [0m"app.kubernetes.io/managed-by"   = "Helm"
+              [32m+[0m [0m"app.kubernetes.io/name"         = "pingdataconsole"
+              [32m+[0m [0m"cloud.google.com/neg"           = jsonencode(
+                    {
+                      [32m+[0m [0mexposed_ports = {
+                          [32m+[0m [0m443 = {
+                              [32m+[0m [0mname = "pingdataconsole-https-neg"
+                            }
+                        }
+                    }
+                )
+              [32m+[0m [0m"helm.sh/chart"                  = "ping-devops-0.6.3"
+              [32m+[0m [0m"meta.helm.sh/release-name"      = "pf"
+              [32m+[0m [0m"meta.helm.sh/release-namespace" = "gke-2"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "pf-pingdataconsole-https"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+
+      [32m+[0m [0mspec {
+          [32m+[0m [0m[1m[0mcluster_ip[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mexternal_traffic_policy[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mhealth_check_node_port[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mpublish_not_ready_addresses[0m[0m = false
+          [32m+[0m [0m[1m[0mselector[0m[0m                    = {
+              [32m+[0m [0m"app.kubernetes.io/instance" = "pf"
+              [32m+[0m [0m"app.kubernetes.io/name"     = "pingdataconsole"
+            }
+          [32m+[0m [0m[1m[0msession_affinity[0m[0m            = "ClientIP"
+          [32m+[0m [0m[1m[0mtype[0m[0m                        = "ClusterIP"
+
+          [32m+[0m [0mport {
+              [32m+[0m [0m[1m[0mname[0m[0m        = "pingfederate-https"
+              [32m+[0m [0m[1m[0mnode_port[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mport[0m[0m        = 443
+              [32m+[0m [0m[1m[0mprotocol[0m[0m    = "TCP"
+              [32m+[0m [0m[1m[0mtarget_port[0m[0m = "8443"
+            }
+        }
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-a"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "northamerica-northeast1-a"
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-b"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "northamerica-northeast1-b"
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-c"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "northamerica-northeast1-c"
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-a"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "us-central1-a"
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-b"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "us-central1-b"
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-c"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [32m+[0m [0m[1m[0mdefault_port[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m               = "testing-17-320612"
+      [32m+[0m [0m[1m[0msize[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mzone[0m[0m                  = "us-central1-c"
+    }
+
+[1m  # module.lb[0].google_compute_backend_service.backend_service[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_backend_service" "backend_service" {
+      [32m+[0m [0m[1m[0mconnection_draining_timeout_sec[0m[0m = 300
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0menable_cdn[0m[0m                      = true
+      [32m+[0m [0m[1m[0mfingerprint[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mhealth_checks[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancing_scheme[0m[0m           = "EXTERNAL"
+      [32m+[0m [0m[1m[0mname[0m[0m                            = "pingdataconsole-backend-service"
+      [32m+[0m [0m[1m[0mport_name[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m                         = "testing-17-320612"
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                        = "HTTPS"
+      [32m+[0m [0m[1m[0mself_link[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0msession_affinity[0m[0m                = "CLIENT_IP"
+      [32m+[0m [0m[1m[0mtimeout_sec[0m[0m                     = 60
+
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+
+      [32m+[0m [0mcdn_policy {
+          [32m+[0m [0m[1m[0mcache_mode[0m[0m                   = (known after apply)
+          [32m+[0m [0m[1m[0mclient_ttl[0m[0m                   = (known after apply)
+          [32m+[0m [0m[1m[0mdefault_ttl[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mmax_ttl[0m[0m                      = (known after apply)
+          [32m+[0m [0m[1m[0mnegative_caching[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mserve_while_stale[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msigned_url_cache_max_age_sec[0m[0m = (known after apply)
+
+          [32m+[0m [0mcache_key_policy {
+              [32m+[0m [0m[1m[0minclude_host[0m[0m           = (known after apply)
+              [32m+[0m [0m[1m[0minclude_protocol[0m[0m       = (known after apply)
+              [32m+[0m [0m[1m[0minclude_query_string[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mquery_string_blacklist[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mquery_string_whitelist[0m[0m = (known after apply)
+            }
+
+          [32m+[0m [0mnegative_caching_policy {
+              [32m+[0m [0m[1m[0mcode[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mttl[0m[0m  = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mlog_config {
+          [32m+[0m [0m[1m[0menable[0m[0m = true
+        }
+    }
+
+[1m  # module.lb[0].google_compute_global_address.global_address[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_global_address" "global_address" {
+      [32m+[0m [0m[1m[0maddress[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "pingdataconsole-global-ip"
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+    }
+
+[1m  # module.lb[0].google_compute_global_forwarding_rule.global_forwarding_rule[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_global_forwarding_rule" "global_forwarding_rule" {
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mip_address[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mip_protocol[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlabel_fingerprint[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m              = "pingdataconsoleglobalrule"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mport_range[0m[0m        = "443"
+      [32m+[0m [0m[1m[0mproject[0m[0m           = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mtarget[0m[0m            = (known after apply)
+    }
+
+[1m  # module.lb[0].google_compute_health_check.health_check[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_health_check" "health_check" {
+      [32m+[0m [0m[1m[0mcheck_interval_sec[0m[0m  = 5
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mhealthy_threshold[0m[0m   = 2
+      [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                = "pingdataconsole-health-check"
+      [32m+[0m [0m[1m[0mproject[0m[0m             = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mtimeout_sec[0m[0m         = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0munhealthy_threshold[0m[0m = 2
+
+      [32m+[0m [0mhttps_health_check {
+          [32m+[0m [0m[1m[0mport_specification[0m[0m = "USE_SERVING_PORT"
+          [32m+[0m [0m[1m[0mproxy_header[0m[0m       = "NONE"
+          [32m+[0m [0m[1m[0mrequest_path[0m[0m       = "/"
+        }
+
+      [32m+[0m [0mlog_config {
+          [32m+[0m [0m[1m[0menable[0m[0m = true
+        }
+    }
+
+[1m  # module.lb[0].google_compute_ssl_certificate.ssl_certificate[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_ssl_certificate" "ssl_certificate" {
+      [32m+[0m [0m[1m[0mcertificate[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mcertificate_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "pingdataconsole-certificate"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_key[0m[0m        = (sensitive value)
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+    }
+
+[1m  # module.lb[0].google_compute_target_https_proxy.target_https_proxy[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_target_https_proxy" "target_https_proxy" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "pingdataconsole-target-https-proxy"
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mproxy_bind[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproxy_id[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mquic_override[0m[0m      = "NONE"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mssl_certificates[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0murl_map[0m[0m            = (known after apply)
+    }
+
+[1m  # module.lb[0].google_compute_url_map.url_map[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_url_map" "url_map" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_service[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mfingerprint[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmap_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "pingdataconsole-url-map"
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+
+      [32m+[0m [0mhost_rule {
+          [32m+[0m [0m[1m[0mhosts[0m[0m        = [
+              [32m+[0m [0m"*",
+            ]
+          [32m+[0m [0m[1m[0mpath_matcher[0m[0m = "allpaths"
+        }
+
+      [32m+[0m [0mpath_matcher {
+          [32m+[0m [0m[1m[0mdefault_service[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m            = "allpaths"
+
+          [32m+[0m [0mpath_rule {
+              [32m+[0m [0m[1m[0mpaths[0m[0m   = [
+                  [32m+[0m [0m"/*",
+                ]
+              [32m+[0m [0m[1m[0mservice[0m[0m = (known after apply)
+            }
+        }
+    }
+
+[1m  # module.lb[0].time_sleep.wait[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "time_sleep" "wait" {
+      [32m+[0m [0m[1m[0mcreate_duration[0m[0m = "10m"
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+    }
+
+[1m  # module.mcs[0].null_resource.run_command[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "null_resource" "run_command" {
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mtriggers[0m[0m = {
+          [32m+[0m [0m"arguments"             = "8a190acb913439a3727ebc557e9eceb9"
+          [32m+[0m [0m"create_cmd_body"       = "testing-17-320612 gke-1 us-central1 gke-2 northamerica-northeast1"
+          [32m+[0m [0m"create_cmd_entrypoint" = "./scripts/mcs_enable.sh"
+          [32m+[0m [0m"gcloud_bin_abs_path"   = "/google-cloud-sdk/bin"
+          [32m+[0m [0m"md5"                   = "cc9a493dc61045c113ce98dc6bde6dac"
+        }
+    }
+
+[1m  # module.mcs[0].null_resource.run_destroy_command[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "null_resource" "run_destroy_command" {
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mtriggers[0m[0m = {
+          [32m+[0m [0m"destroy_cmd_body"       = "gke-1 us-central1 gke-2 northamerica-northeast1"
+          [32m+[0m [0m"destroy_cmd_entrypoint" = "./scripts/mcs_disable.sh"
+          [32m+[0m [0m"gcloud_bin_abs_path"    = "/google-cloud-sdk/bin"
+        }
+    }
+
+[1m  # module.network.google_compute_firewall.firewall[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_firewall" "firewall" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdestination_ranges[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdirection[0m[0m          = "INGRESS"
+      [32m+[0m [0m[1m[0menable_logging[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "gke-1-2-mrc-allow-all"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m            = "gke-1-2-mrc"
+      [32m+[0m [0m[1m[0mpriority[0m[0m           = 1000
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0msource_ranges[0m[0m      = (known after apply)
+
+      [32m+[0m [0mallow {
+          [32m+[0m [0m[1m[0mports[0m[0m    = []
+          [32m+[0m [0m[1m[0mprotocol[0m[0m = "all"
+        }
+    }
+
+[1m  # module.network.google_compute_network.network[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_network" "network" {
+      [32m+[0m [0m[1m[0mauto_create_subnetworks[0m[0m         = false
+      [32m+[0m [0m[1m[0mdelete_default_routes_on_create[0m[0m = false
+      [32m+[0m [0m[1m[0mgateway_ipv4[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mmtu[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                            = "gke-1-2-mrc"
+      [32m+[0m [0m[1m[0mproject[0m[0m                         = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrouting_mode[0m[0m                    = "GLOBAL"
+      [32m+[0m [0m[1m[0mself_link[0m[0m                       = (known after apply)
+    }
+
+[1m  # module.network.google_compute_router.router["northamerica-northeast1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_router" "router" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "router-gke-1-2-mrc-northamerica-northeast1"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m             = "northamerica-northeast1"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+
+      [32m+[0m [0mbgp {
+          [32m+[0m [0m[1m[0madvertise_mode[0m[0m = "DEFAULT"
+          [32m+[0m [0m[1m[0masn[0m[0m            = 64514
+        }
+    }
+
+[1m  # module.network.google_compute_router.router["us-central1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_router" "router" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m               = "router-gke-1-2-mrc-us-central1"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m            = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m             = "us-central1"
+      [32m+[0m [0m[1m[0mself_link[0m[0m          = (known after apply)
+
+      [32m+[0m [0mbgp {
+          [32m+[0m [0m[1m[0madvertise_mode[0m[0m = "DEFAULT"
+          [32m+[0m [0m[1m[0masn[0m[0m            = 64514
+        }
+    }
+
+[1m  # module.network.google_compute_router_nat.router_nat["northamerica-northeast1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_router_nat" "router_nat" {
+      [32m+[0m [0m[1m[0menable_endpoint_independent_mapping[0m[0m = true
+      [32m+[0m [0m[1m[0micmp_idle_timeout_sec[0m[0m               = 30
+      [32m+[0m [0m[1m[0mid[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                                = "router-nat-gke-1-2-mrc-northamerica-northeast1"
+      [32m+[0m [0m[1m[0mnat_ip_allocate_option[0m[0m              = "AUTO_ONLY"
+      [32m+[0m [0m[1m[0mproject[0m[0m                             = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m                              = "northamerica-northeast1"
+      [32m+[0m [0m[1m[0mrouter[0m[0m                              = "router-gke-1-2-mrc-northamerica-northeast1"
+      [32m+[0m [0m[1m[0msource_subnetwork_ip_ranges_to_nat[0m[0m  = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+      [32m+[0m [0m[1m[0mtcp_established_idle_timeout_sec[0m[0m    = 1200
+      [32m+[0m [0m[1m[0mtcp_transitory_idle_timeout_sec[0m[0m     = 30
+      [32m+[0m [0m[1m[0mudp_idle_timeout_sec[0m[0m                = 30
+
+      [32m+[0m [0mlog_config {
+          [32m+[0m [0m[1m[0menable[0m[0m = true
+          [32m+[0m [0m[1m[0mfilter[0m[0m = "ERRORS_ONLY"
+        }
+    }
+
+[1m  # module.network.google_compute_router_nat.router_nat["us-central1"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_router_nat" "router_nat" {
+      [32m+[0m [0m[1m[0menable_endpoint_independent_mapping[0m[0m = true
+      [32m+[0m [0m[1m[0micmp_idle_timeout_sec[0m[0m               = 30
+      [32m+[0m [0m[1m[0mid[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                                = "router-nat-gke-1-2-mrc-us-central1"
+      [32m+[0m [0m[1m[0mnat_ip_allocate_option[0m[0m              = "AUTO_ONLY"
+      [32m+[0m [0m[1m[0mproject[0m[0m                             = "testing-17-320612"
+      [32m+[0m [0m[1m[0mregion[0m[0m                              = "us-central1"
+      [32m+[0m [0m[1m[0mrouter[0m[0m                              = "router-gke-1-2-mrc-us-central1"
+      [32m+[0m [0m[1m[0msource_subnetwork_ip_ranges_to_nat[0m[0m  = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+      [32m+[0m [0m[1m[0mtcp_established_idle_timeout_sec[0m[0m    = 1200
+      [32m+[0m [0m[1m[0mtcp_transitory_idle_timeout_sec[0m[0m     = 30
+      [32m+[0m [0m[1m[0mudp_idle_timeout_sec[0m[0m                = 30
+
+      [32m+[0m [0mlog_config {
+          [32m+[0m [0m[1m[0menable[0m[0m = true
+          [32m+[0m [0m[1m[0mfilter[0m[0m = "ERRORS_ONLY"
+        }
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/compute.admin"
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-1-compute-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-1-compute-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-1/gke-1-compute-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/dns.admin"
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-1-dns-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-1-dns-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-1/gke-1-dns-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/storage.admin"
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-1-storage-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-1-storage-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-1/gke-1-storage-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/compute.admin"
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-2-compute-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-2-compute-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-2/gke-2-compute-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/dns.admin"
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-2-dns-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-2-dns-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-2/gke-2-dns-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [32m+[0m [0m[1m[0metag[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m    = "roles/storage.admin"
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account.cluster_service_account[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account" "cluster_service_account" {
+      [32m+[0m [0m[1m[0maccount_id[0m[0m   = "gke-2-storage-sa"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m = "GCP SA bound to K8S SA gke-2-storage-sa"
+      [32m+[0m [0m[1m[0memail[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mproject[0m[0m      = "testing-17-320612"
+      [32m+[0m [0m[1m[0munique_id[0m[0m    = (known after apply)
+    }
+
+[1m  # module.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account_iam_member.main[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_service_account_iam_member" "main" {
+      [32m+[0m [0m[1m[0metag[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mmember[0m[0m             = "serviceAccount:testing-17-320612.svc.id.goog[gke-2/gke-2-storage-sa]"
+      [32m+[0m [0m[1m[0mrole[0m[0m               = "roles/iam.workloadIdentityUser"
+      [32m+[0m [0m[1m[0mservice_account_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-compute-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-1-compute-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-1-compute-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-dns-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-1-dns-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-1-dns-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-storage-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-1-storage-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-1-storage-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-1"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-compute-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-2-compute-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-2-compute-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-dns-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-2-dns-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-2-dns-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-storage-sa"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service_account" "main" {
+      [32m+[0m [0m[1m[0mautomount_service_account_token[0m[0m = false
+      [32m+[0m [0m[1m[0mdefault_secret_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"iam.gke.io/gcp-service-account" = "gke-2-storage-sa@testing-17-320612.iam.gserviceaccount.com"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "gke-2-storage-sa"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "gke-2"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+    }
+
+[1m  # module.bastion-1[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_firewall" "allow_from_iap_to_instances" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mdestination_ranges[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mdirection[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0menable_logging[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                    = "test-allow-ssh-from-iap-to-tunnel"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mpriority[0m[0m                = 1000
+      [32m+[0m [0m[1m[0mproject[0m[0m                 = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0msource_ranges[0m[0m           = [
+          [32m+[0m [0m"35.235.240.0/20",
+        ]
+      [32m+[0m [0m[1m[0mtarget_service_accounts[0m[0m = (known after apply)
+
+      [32m+[0m [0mallow {
+          [32m+[0m [0m[1m[0mports[0m[0m    = [
+              [32m+[0m [0m"22",
+            ]
+          [32m+[0m [0m[1m[0mprotocol[0m[0m = "tcp"
+        }
+    }
+
+[1m  # module.bastion-1[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-1-bastion-host us-central1-a"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_iap_tunnel_instance_iam_binding" "enable_iap" {
+      [32m+[0m [0m[1m[0metag[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m = "gke-1-bastion-host"
+      [32m+[0m [0m[1m[0mmembers[0m[0m  = [
+          [32m+[0m [0m"user:nikitadem13@gmail.com",
+        ]
+      [32m+[0m [0m[1m[0mproject[0m[0m  = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m     = "roles/iap.tunnelResourceAccessor"
+      [32m+[0m [0m[1m[0mzone[0m[0m     = "us-central1-a"
+    }
+
+[1m  # module.bastion-2[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_compute_firewall" "allow_from_iap_to_instances" {
+      [32m+[0m [0m[1m[0mcreation_timestamp[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mdestination_ranges[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mdirection[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0menable_logging[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                    = "test-allow-ssh-from-iap-to-tunnel"
+      [32m+[0m [0m[1m[0mnetwork[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mpriority[0m[0m                = 1000
+      [32m+[0m [0m[1m[0mproject[0m[0m                 = "testing-17-320612"
+      [32m+[0m [0m[1m[0mself_link[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0msource_ranges[0m[0m           = [
+          [32m+[0m [0m"35.235.240.0/20",
+        ]
+      [32m+[0m [0m[1m[0mtarget_service_accounts[0m[0m = (known after apply)
+
+      [32m+[0m [0mallow {
+          [32m+[0m [0m[1m[0mports[0m[0m    = [
+              [32m+[0m [0m"22",
+            ]
+          [32m+[0m [0m[1m[0mprotocol[0m[0m = "tcp"
+        }
+    }
+
+[1m  # module.bastion-2[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-2-bastion-host northamerica-northeast1-a"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_iap_tunnel_instance_iam_binding" "enable_iap" {
+      [32m+[0m [0m[1m[0metag[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m = "gke-2-bastion-host"
+      [32m+[0m [0m[1m[0mmembers[0m[0m  = [
+          [32m+[0m [0m"user:nikitadem13@gmail.com",
+        ]
+      [32m+[0m [0m[1m[0mproject[0m[0m  = "testing-17-320612"
+      [32m+[0m [0m[1m[0mrole[0m[0m     = "roles/iap.tunnelResourceAccessor"
+      [32m+[0m [0m[1m[0mzone[0m[0m     = "northamerica-northeast1-a"
+    }
+
+[0m[1mPlan:[0m 80 to add, 0 to change, 0 to destroy.
+[0m[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider kubernetes is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 82, in module "k8s-gke-1":
+[33m│[0m [0m  82:     [4mkubernetes[0m = kubernetes.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.k8s-gke-1 does not declare a provider named kubernetes.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for kubernetes in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and 5 more similar warnings elsewhere)
+[33m╵[0m[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider helm is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 236, in module "helm-gke-1":
+[33m│[0m [0m 236:     [4mhelm[0m       = helm.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.helm-gke-1 does not declare a provider named helm.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for helm in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and one more similar warning elsewhere)
+[33m╵[0m[0m
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

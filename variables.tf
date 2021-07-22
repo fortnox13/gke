@@ -238,6 +238,12 @@ variable "bastion_enabled" {
   description = "bastion_enabled"
 }
 
+variable "members" {
+  description = "List of members in the standard GCP form: user:{email}, serviceAccount:{email}, group:{email}"
+  type        = list(string)
+  default = [""]
+}
+
 variable "bastion_gke-1_ip_cidr_range" {
   type        = string
   default     = ""
