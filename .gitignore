@@ -47,3 +47,6 @@ scripts/exports.sh
 
 # Ignore .idea files
 **/.idea/*
+
+# Same testing logs
+log*
