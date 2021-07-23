@@ -2,7 +2,7 @@
 # General
 #--------------------------------------------------------------
 # A customizable unique identifier for your project:
-gcp_project_id             = "telus-new-319815"
+gcp_project_id             = "testing-21-320709"
 # The next 3 variables should be provided through env variables with TF_VAR_ prefix.
 # Email in clean text for devops user that have the working license key:
 ping_devops_user_plain     = ""
@@ -162,7 +162,9 @@ helm_namespace  = "test"
 #--------------------------------------------------------------
 # Whether enable or not the bastion host for a GKE cluster
 # https://cloud.google.com/solutions/connecting-securely#bastion
-bastion_enabled             = false
+bastion_enabled             = true
+# List of members in the standard GCP form: user:{email}, serviceAccount:{email}, group:{email}
+members = ["user:nikitadem13@gmail.com"]
 # IP CIDR to be used to assign the IP addresses to the VM:
 bastion_gke-1_ip_cidr_range = "192.168.10.0/24"
 bastion_gke-2_ip_cidr_range = "192.168.11.0/24"

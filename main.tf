@@ -91,7 +91,7 @@ module "k8s-gke-1" {
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_user_plain     = var.ping_devops_user_plain
   ping_devops_key_encrypted  = var.ping_devops_key_encrypted
   ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
@@ -115,7 +115,7 @@ module "k8s-gke-2" {
   svc_instance    = var.k8s_svc_instance
   svc_enabled     = var.k8s_svc_enabled
 
-  ping_devops_user_plain    = var.ping_devops_user_plain
+  ping_devops_user_plain     = var.ping_devops_user_plain
   ping_devops_key_encrypted  = var.ping_devops_key_encrypted
   ping_devops_user_encrypted = var.ping_devops_user_encrypted
 
@@ -172,38 +172,6 @@ module "wi_gsa-gke-2" {
   project_id     = var.gcp_project_id
 
   depends_on = [module.k8s-gke-2]
-}
-
-module "bastion-1" {
-  source = "./modules/bastion"
-  count  = var.bastion_enabled ? 1 : 0
-
-  gcp_project_id = var.gcp_project_id
-  gcp_region     = var.cluster_gke-1_region
-  gcp_zone       = "${var.cluster_gke-1_region}-a"
-
-  cluster_name = module.gke-1.cluster_name
-
-  primary_ip_cidr_range = var.bastion_gke-1_ip_cidr_range
-  network               = module.network.network_id
-
-  machine_type = var.bastion_machine_type
-}
-
-module "bastion-2" {
-  source = "./modules/bastion"
-  count  = var.bastion_enabled ? 1 : 0
-
-  gcp_project_id = var.gcp_project_id
-  gcp_region     = var.cluster_gke-2_region
-  gcp_zone       = "${var.cluster_gke-2_region}-a"
-
-  cluster_name = module.gke-2.cluster_name
-
-  primary_ip_cidr_range = var.bastion_gke-2_ip_cidr_range
-  network               = module.network.network_id
-
-  machine_type = var.bastion_machine_type
 }
 
 module "lb" {
@@ -269,4 +237,38 @@ module "mcs" {
 
   destroy_cmd_entrypoint = "${path.module}/scripts/mcs_disable.sh"
   destroy_cmd_body       = "${module.gke-1.cluster_name} ${var.cluster_gke-1_location} ${module.gke-2.cluster_name} ${var.cluster_gke-2_location}"
+}
+
+
+module "bastion-1" {
+  source = "./modules/bastion"
+  count  = var.bastion_enabled ? 1 : 0
+
+  gcp_project_id = var.gcp_project_id
+  gcp_region     = var.cluster_gke-1_region
+  gcp_zone       = "${var.cluster_gke-1_region}-a"
+
+  cluster_name = module.gke-1.cluster_name
+
+  primary_ip_cidr_range = var.bastion_gke-1_ip_cidr_range
+  network               = module.network.network_id
+  members               = var.members
+  machine_type          = var.bastion_machine_type
+}
+
+module "bastion-2" {
+  source = "./modules/bastion"
+  count  = var.bastion_enabled ? 1 : 0
+
+  gcp_project_id = var.gcp_project_id
+  gcp_region     = var.cluster_gke-2_region
+  gcp_zone       = "${var.cluster_gke-2_region}-a"
+
+  cluster_name = module.gke-2.cluster_name
+
+  primary_ip_cidr_range = var.bastion_gke-2_ip_cidr_range
+  network               = module.network.network_id
+
+  members      = var.members
+  machine_type = var.bastion_machine_type
 }

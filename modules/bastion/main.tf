@@ -29,9 +29,12 @@ resource "google_service_account" "bastion_sa" {
 }
 
 resource "google_project_iam_member" "bastion_sa_iam" {
-  for_each = toset([
+    for_each = toset([
     "roles/container.admin",
-    "roles/container.clusterAdmin"
+    "roles/container.clusterAdmin",
+    "roles/compute.instanceAdmin",
+    "roles/iap.tunnelResourceAccessor",
+    "roles/iam.serviceAccountUser"
   ])
 
   project = var.gcp_project_id
@@ -53,6 +56,10 @@ resource "google_compute_instance" "bastion" {
   machine_type = var.machine_type
   zone         = var.gcp_zone
 
+labels = {
+      instance = "bastion"
+  }
+
   tags = ["bastion"]
 
   boot_disk {
@@ -65,6 +72,9 @@ resource "google_compute_instance" "bastion" {
     interface = "SCSI"
   }
 
+    metadata = {
+    enable-oslogin = "TRUE"
+    }
   network_interface {
     subnetwork = google_compute_subnetwork.subnetwork.self_link
   }
@@ -75,5 +85,20 @@ resource "google_compute_instance" "bastion" {
   service_account {
     email  = google_service_account.bastion_sa.email
     scopes = ["cloud-platform"]
+   
   }
+}
+
+
+module "iap_tunneling" {
+  source                     = "../iap-tunneling"
+  fw_name_allow_ssh_from_iap = "test-allow-ssh-from-iap-to-tunnel-${local.compute_instance_name}"
+  project                    = var.gcp_project_id
+  network                    = var.network
+  service_accounts           = [google_service_account.bastion_sa.email]
+  instances = [{
+    name = google_compute_instance.bastion.name
+    zone = var.gcp_zone
+  }]
+  members = var.members
 }

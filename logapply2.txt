@@ -1,0 +1,129 @@
+[0m[1mmodule.gke-1.google_service_account.gke_nodes_sa: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.network.google_compute_network.network: Refreshing state... [id=projects/testing-21-320709/global/networks/gke-1-2-mrc][0m
+[0m[1mmodule.gke-2.google_service_account.gke_nodes_sa: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"]: Refreshing state... [id=testing-21-320709/roles/source.reader/serviceAccount:gke-2-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"]: Refreshing state... [id=testing-21-320709/roles/storage.objectViewer/serviceAccount:gke-2-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"]: Refreshing state... [id=testing-21-320709/roles/source.reader/serviceAccount:gke-1-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"]: Refreshing state... [id=testing-21-320709/roles/storage.objectViewer/serviceAccount:gke-1-nodes-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/testing-21-320709/regions/northamerica-northeast1/subnetworks/gke-2-subnet][0m
+[0m[1mmodule.network.google_compute_firewall.firewall: Refreshing state... [id=projects/testing-21-320709/global/firewalls/gke-1-2-mrc-allow-all][0m
+[0m[1mmodule.gke-1.google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/testing-21-320709/regions/us-central1/subnetworks/gke-1-subnet][0m
+[0m[1mmodule.network.google_compute_router.router["us-central1"]: Refreshing state... [id=projects/testing-21-320709/regions/us-central1/routers/router-gke-1-2-mrc-us-central1][0m
+[0m[1mmodule.network.google_compute_router.router["northamerica-northeast1"]: Refreshing state... [id=projects/testing-21-320709/regions/northamerica-northeast1/routers/router-gke-1-2-mrc-northamerica-northeast1][0m
+[0m[1mmodule.gke-2.google_container_cluster.cluster: Refreshing state... [id=projects/testing-21-320709/locations/northamerica-northeast1/clusters/gke-2][0m
+[0m[1mmodule.network.google_compute_router_nat.router_nat["us-central1"]: Refreshing state... [id=testing-21-320709/us-central1/router-gke-1-2-mrc-us-central1/router-nat-gke-1-2-mrc-us-central1][0m
+[0m[1mmodule.network.google_compute_router_nat.router_nat["northamerica-northeast1"]: Refreshing state... [id=testing-21-320709/northamerica-northeast1/router-gke-1-2-mrc-northamerica-northeast1/router-nat-gke-1-2-mrc-northamerica-northeast1][0m
+[0m[1mmodule.gke-1.google_container_cluster.cluster: Refreshing state... [id=projects/testing-21-320709/locations/us-central1/clusters/gke-1][0m
+[0m[1mmodule.gke-2.google_container_node_pool.cluster_node_pool: Refreshing state... [id=projects/testing-21-320709/locations/northamerica-northeast1/clusters/gke-2/nodePools/gke-2-node-pool][0m
+[0m[1mmodule.bastion-2[0].google_service_account.bastion_sa: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/testing-21-320709/regions/northamerica-northeast1/subnetworks/gke-2-bastion-subnet][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-compute-sa"]: Refreshing state... [id=gke-2/gke-2-compute-sa][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-2"]: Refreshing state... [id=gke-2][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-storage-sa"]: Refreshing state... [id=gke-2/gke-2-storage-sa][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-dns-sa"]: Refreshing state... [id=gke-2/gke-2-dns-sa][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-1"]: Refreshing state... [id=gke-1][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"]: Refreshing state... [id=testing-21-320709/roles/container.admin/serviceAccount:gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0]: Refreshing state... [id=projects/testing-21-320709/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-2-bastion-host][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"]: Refreshing state... [id=testing-21-320709/roles/container.clusterAdmin/serviceAccount:gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"]: Refreshing state... [id=testing-21-320709/roles/iam.serviceAccountUser/serviceAccount:gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"]: Refreshing state... [id=testing-21-320709/roles/iap.tunnelResourceAccessor/serviceAccount:gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"]: Refreshing state... [id=testing-21-320709/roles/compute.instanceAdmin/serviceAccount:gke-2-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_compute_instance.bastion: Refreshing state... [id=projects/testing-21-320709/zones/northamerica-northeast1-a/instances/gke-2-bastion-host][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-1"]: Refreshing state... [id=gke-1/devops-secret][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-2"]: Refreshing state... [id=gke-2/devops-secret][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_service.kubernetes_service["gke-2"]: Refreshing state... [id=gke-2/pf-pingdataconsole-https][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-compute-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-dns-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-storage-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"]: Refreshing state... [id=testing-21-320709/roles/compute.admin/serviceAccount:gke-2-compute-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"]: Refreshing state... [id=testing-21-320709/roles/storage.admin/serviceAccount:gke-2-storage-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"]: Refreshing state... [id=testing-21-320709/roles/dns.admin/serviceAccount:gke-2-dns-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-storage-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-2/gke-2-storage-sa]][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-compute-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-2/gke-2-compute-sa]][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-2-dns-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-2/gke-2-dns-sa]][0m
+[0m[1mmodule.bastion-1[0].google_service_account.bastion_sa: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-1.google_container_node_pool.cluster_node_pool: Refreshing state... [id=projects/testing-21-320709/locations/us-central1/clusters/gke-1/nodePools/gke-1-node-pool][0m
+[0m[1mmodule.mcs[0].null_resource.run_destroy_command[0]: Refreshing state... [id=3530481621747847336][0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Refreshing state... [id=5082152581270455774][0m
+[0m[1mmodule.bastion-1[0].google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/testing-21-320709/regions/us-central1/subnetworks/gke-1-bastion-subnet][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-1"]: Refreshing state... [id=gke-1][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-2"]: Refreshing state... [id=gke-2][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-compute-sa"]: Refreshing state... [id=gke-1/gke-1-compute-sa][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-dns-sa"]: Refreshing state... [id=gke-1/gke-1-dns-sa][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-storage-sa"]: Refreshing state... [id=gke-1/gke-1-storage-sa][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"]: Refreshing state... [id=testing-21-320709/roles/container.admin/serviceAccount:gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"]: Refreshing state... [id=testing-21-320709/roles/container.clusterAdmin/serviceAccount:gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"]: Refreshing state... [id=testing-21-320709/roles/iap.tunnelResourceAccessor/serviceAccount:gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"]: Refreshing state... [id=testing-21-320709/roles/compute.instanceAdmin/serviceAccount:gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"]: Refreshing state... [id=testing-21-320709/roles/iam.serviceAccountUser/serviceAccount:gke-1-bastion-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0]: Refreshing state... [id=projects/testing-21-320709/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-1-bastion-host][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-2"]: Refreshing state... [id=gke-2/devops-secret][0m
+[0m[1mmodule.bastion-1[0].google_compute_instance.bastion: Refreshing state... [id=projects/testing-21-320709/zones/us-central1-a/instances/gke-1-bastion-host][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-1"]: Refreshing state... [id=gke-1/devops-secret][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_service.kubernetes_service["gke-1"]: Refreshing state... [id=gke-1/pf-pingdataconsole-https][0m
+[0m[1mmodule.lb[0].time_sleep.wait: Refreshing state... [id=2021-07-23T10:28:53Z][0m
+[0m[1mmodule.lb[0].google_compute_ssl_certificate.ssl_certificate: Refreshing state... [id=projects/testing-21-320709/global/sslCertificates/pingdataconsole-certificate][0m
+[0m[1mmodule.lb[0].google_compute_health_check.health_check: Refreshing state... [id=projects/testing-21-320709/global/healthChecks/pingdataconsole-health-check][0m
+[0m[1mmodule.lb[0].google_compute_global_address.global_address: Refreshing state... [id=projects/testing-21-320709/global/addresses/pingdataconsole-global-ip][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-storage-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-compute-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-dns-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"]: Refreshing state... [id=testing-21-320709/roles/storage.admin/serviceAccount:gke-1-storage-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-storage-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-1/gke-1-storage-sa]][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"]: Refreshing state... [id=testing-21-320709/roles/dns.admin/serviceAccount:gke-1-dns-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"]: Refreshing state... [id=testing-21-320709/roles/compute.admin/serviceAccount:gke-1-compute-sa@testing-21-320709.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-compute-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-1/gke-1-compute-sa]][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/testing-21-320709/serviceAccounts/gke-1-dns-sa@testing-21-320709.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:testing-21-320709.svc.id.goog[gke-1/gke-1-dns-sa]][0m
+[0m[1mmodule.bastion-1[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-1-bastion-host us-central1-a"]: Refreshing state... [id=projects/testing-21-320709/iap_tunnel/zones/us-central1-a/instances/gke-1-bastion-host/roles/iap.tunnelResourceAccessor][0m
+[0m[1mmodule.lb[0].google_compute_backend_service.backend_service: Refreshing state... [id=projects/testing-21-320709/global/backendServices/pingdataconsole-backend-service][0m
+[0m[1mmodule.lb[0].google_compute_url_map.url_map: Refreshing state... [id=projects/testing-21-320709/global/urlMaps/pingdataconsole-url-map][0m
+[0m[1mmodule.lb[0].google_compute_target_https_proxy.target_https_proxy: Refreshing state... [id=projects/testing-21-320709/global/targetHttpsProxies/pingdataconsole-target-https-proxy][0m
+[0m[1mmodule.lb[0].google_compute_global_forwarding_rule.global_forwarding_rule: Refreshing state... [id=projects/testing-21-320709/global/forwardingRules/pingdataconsoleglobalrule][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.bastion-2[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-2-bastion-host northamerica-northeast1-a"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "google_iap_tunnel_instance_iam_binding" "enable_iap" {
+      [32m+[0m [0m[1m[0metag[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m = "gke-2-bastion-host"
+      [32m+[0m [0m[1m[0mmembers[0m[0m  = [
+          [32m+[0m [0m"user:nikitadem13@gmail.com",
+        ]
+      [32m+[0m [0m[1m[0mproject[0m[0m  = "testing-21-320709"
+      [32m+[0m [0m[1m[0mrole[0m[0m     = "roles/iap.tunnelResourceAccessor"
+      [32m+[0m [0m[1m[0mzone[0m[0m     = "northamerica-northeast1-a"
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m[1mmodule.bastion-2[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-2-bastion-host northamerica-northeast1-a"]: Creating...[0m[0m
+[0m[1mmodule.bastion-2[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-2-bastion-host northamerica-northeast1-a"]: Creation complete after 6s [id=projects/testing-21-320709/iap_tunnel/zones/northamerica-northeast1-a/instances/gke-2-bastion-host/roles/iap.tunnelResourceAccessor][0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider kubernetes is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 82, in module "k8s-gke-1":
+[33m│[0m [0m  82:     [4mkubernetes[0m = kubernetes.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.k8s-gke-1 does not declare a provider named kubernetes.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for kubernetes in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and 5 more similar warnings elsewhere)
+[33m╵[0m[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider helm is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 202, in module "helm-gke-1":
+[33m│[0m [0m 202:     [4mhelm[0m       = helm.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.helm-gke-1 does not declare a provider named helm.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for helm in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and one more similar warning elsewhere)
+[33m╵[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+[0m
