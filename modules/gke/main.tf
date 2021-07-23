@@ -64,6 +64,9 @@ resource "google_container_cluster" "cluster" {
   name           = var.cluster_name
   location       = var.cluster_location
   node_locations = var.cluster_node_locations
+  resource_labels = {
+    nodes = var.cluster_name
+  }
 
   network    = var.network
   subnetwork = google_compute_subnetwork.subnetwork.id
