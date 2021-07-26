@@ -272,3 +272,5 @@ module "bastion-2" {
   members      = var.members
   machine_type = var.bastion_machine_type
 }
+
+
