@@ -30,7 +30,8 @@ resource "google_service_account" "gke_nodes_sa" {
 resource "google_project_iam_member" "gke_nodes_sa_bindings" {
   for_each = toset([
     "roles/storage.objectViewer",
-    "roles/source.reader"
+    "roles/source.reader",
+    "roles/iam.serviceAccountUser"
   ])
 
   project = var.gcp_project_id

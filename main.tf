@@ -277,7 +277,7 @@ module "mcs" {
   create_cmd_body       = "${var.gcp_project_id} ${module.gke-1.cluster_name} ${var.cluster_gke-1_location} ${module.gke-2.cluster_name} ${var.cluster_gke-2_location}"
 
   destroy_cmd_entrypoint = "${path.module}/scripts/mcs_disable.sh"
-  destroy_cmd_body       = "${module.gke-1.cluster_name} ${var.cluster_gke-1_location} ${module.gke-2.cluster_name} ${var.cluster_gke-2_location}"
+  destroy_cmd_body       = "${module.gke-1.cluster_name} ${module.gke-2.cluster_name}"
 
   module_depends_on = [module.lb]
 }

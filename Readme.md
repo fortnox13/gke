@@ -10,6 +10,7 @@
    roles/iam.serviceAccountAdmin assigned:
    
     `gcloud auth login`
+    `export GOOGLE_APPLICATION_CREDENTIALS=PATH_TO_SA_KEY_FILE`
    
 1. Next please create GCP SA in a way you prefer:
    https://cloud.google.com/iam/docs/creating-managing-service-accounts
@@ -84,8 +85,9 @@
     
    `terraform destroy -var-file=./config/YOUR_TFVARS_FILE`
     
-    * In most cases you would need to delete all namespaces terraform
-      resources from terraform state. For example:
+**Troubleshooting**
+1.  * In most cases you would need to delete all namespaces terraform
+    resources from terraform state. For example:
     
     `terraform state rm \
     module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace[\"gke-1\"] \
@@ -95,9 +97,11 @@
     module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace[\"gke-1\"] \
     module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace[\"gke-2\"]`
     
-   Then you MUST delete all resources that were not provisioned via
+2. You MUST delete all resources that were not provisioned via
    your terraform code but set as dependencies for all resources
    in your terraform state.
 
     The same approach could be used in case of any terraform resource
     for any reasons could not be deleted.
+
+2. 
