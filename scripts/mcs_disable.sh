@@ -10,5 +10,5 @@ GKE_2_name=$2
 #gcloud container hub memberships unregister $GKE_2_name \
 #   --gke-cluster $GKE_2_zone/$GKE_2_name
 
-gcloud container hub memberships $GKE_1_name
-gcloud container hub memberships $GKE_2_name
+gcloud -q container hub memberships delete $GKE_1_name
+gcloud -q container hub memberships delete $GKE_2_name
