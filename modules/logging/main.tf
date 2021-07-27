@@ -1,15 +1,24 @@
 /*
-This module intended to create logging backups to bucket and bigquery.
- Create NEARLINE bucket with lifecycle configuration to delete files older than 365 days.
-  All logs imports to this bucket every hour. 
-Create bigquery table which have logs for last 2 hours to have opportunities to see 
-logs which do not imported to bucket yet.
+ This module intended for creation backup for logging from stackdriver.
+ Create NEARLINE bucket with lifecycle configuration to delete files older than 365 days. 
+ All logs imports to this bucket every hour. 
+Create bigquery table which have logs for last 2 hours to have 
+opportunities to see logs which do not imported to bucket yet. 
 */
-// Provides access to available Google Container Engine versions in a zone for a given project.
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Create the resources needed for the Stackdriver Export Sinks
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Random string used to create a unique bucket name
+resource "random_id" "server" {
+  byte_length = 8
+}
+
 // Create a Cloud Storage Bucket for long-term storage of logs
 // Note: the bucket has force_destroy turned on, so the data will be lost if you run
 // terraform destroy
-resource "google_storage_bucket" "log-bucket" {
+resource "google_storage_bucket" "logs-bucket" {
   name          = "stackdriver-logging-bucket-${random_id.server.hex}"
   storage_class = "NEARLINE"
   force_destroy = true
@@ -21,7 +30,10 @@ resource "google_storage_bucket" "log-bucket" {
       type = "Delete"
     }
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>>  add module to backup logs
 }
 
 // Create a BigQuery Dataset for storage of logs
@@ -33,7 +45,11 @@ resource "google_bigquery_dataset" "bigquery-dataset" {
 
   labels = {
     env = "default"
+<<<<<<< HEAD
  }
+=======
+  }
+>>>>>>>  add module to backup logs
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -43,6 +59,7 @@ resource "google_bigquery_dataset" "bigquery-dataset" {
 // https://cloud.google.com/logging/docs/export/configure_export_v2#dest-auth
 ///////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 // Create the Stackdriver Export Sink for Cloud Storage Notifications
 resource "google_logging_project_sink" "storage-sink" {
   name        = "storage-sink"
@@ -57,6 +74,20 @@ resource "google_logging_project_sink" "bigquery-sink" {
   name        = "bigquery-sink"
   destination = "bigquery.googleapis.com/projects/${var.project}/datasets/${google_bigquery_dataset.bigquery-dataset.dataset_id}"
   filter      = "resource.type = k8s_container"
+=======
+// Create the Stackdriver Export Sink for Cloud Storage GKE Notifications
+resource "google_logging_project_sink" "storage-sink" {
+  name        = "logging-storage-sink"
+  destination = "storage.googleapis.com/${google_storage_bucket.logs-bucket.name}"
+  
+  unique_writer_identity = true
+}
+
+// Create the Stackdriver Export Sink for BigQuery GKE Notifications
+resource "google_logging_project_sink" "bigquery-sink" {
+  name        = "bigquery-sink"
+  destination = "bigquery.googleapis.com/projects/${var.gcp_project_id}/datasets/${google_bigquery_dataset.bigquery-dataset.dataset_id}"
+>>>>>>>  add module to backup logs
 
   unique_writer_identity = true
 }
@@ -79,3 +110,8 @@ resource "google_project_iam_binding" "log-writer-bigquery" {
   ]
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>>  add module to backup logs
