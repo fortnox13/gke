@@ -286,33 +286,24 @@ module "bastion-2" {
 }
 
 
-# module "dashboards_cluster-1" {
-#   source       = "./modules/monitoring"
-#   for_each = toset(
-#     [{ template = "false"
-#       dashboard = "dashboards/monitoring_bastions.json" },
-#       { template = "true"
-#       cluster_name = var.cluster_gke-1_name },
-#       { template = "true"
-#       cluster_name = var.cluster_gke-2_name }])
+module "dashboards_bastion" {
+  source    = "./modules/monitoring"
+  template  = false
+  dashboard = "dashboards/monitoring_bastions.json"
+}
 
-# }
-
-
-# module "dashboards_bastion" {
-#   source       = "./modules/monitoring"
-#    template = false
-#       dashboard = "dashboards/monitoring_bastions.json" 
-#       }
-
-# module "dashboards_cluster-1" {
-#   source       = "./modules/monitoring"
-#   template = true
-#       cluster_name = var.cluster_gke-1_name
-# }
+module "dashboards_cluster" {
+  source       = "./modules/monitoring"
+  template     = true
+  for_each = toset([
+     var.cluster_gke-1_name,
+     var.cluster_gke-2_name
+  ])
+  cluster_name = each.value
+}
 
 # module "dashboards_cluster-2" {
 #   source       = "./modules/monitoring"
-#   template = true
-#       cluster_name = var.cluster_gke-2_name
+#   template     = true
+#   cluster_name = var.cluster_gke-2_name
 # }

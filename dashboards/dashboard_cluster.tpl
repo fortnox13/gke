@@ -1,7 +1,6 @@
-CLUSTER_NAME=${cluster_name}
 {
   "category": "CUSTOM",
-  "displayName": "${CLUSTER_NAME} Cluster Monitoring",
+  "displayName": "${cluster_name} Cluster Monitoring",
   "mosaicLayout": {
     "columns": 12,
     "tiles": [
@@ -26,7 +25,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/cpu/request_cores\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/cpu/request_cores\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -111,7 +110,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/node/memory/total_bytes\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/node/memory/total_bytes\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -196,7 +195,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_RATE"
                     },
-                    "filter": "metric.type=\"kubernetes.io/node/network/received_bytes_count\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/node/network/received_bytes_count\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -260,7 +259,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_RATE"
                     },
-                    "filter": "metric.type=\"kubernetes.io/node/network/sent_bytes_count\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/node/network/sent_bytes_count\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -324,7 +323,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/node/ephemeral_storage/total_bytes\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/node/ephemeral_storage/total_bytes\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -409,7 +408,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/node/ephemeral_storage/inodes_total\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/node/ephemeral_storage/inodes_total\" resource.type=\"k8s_node\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -473,7 +472,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/cpu/limit_cores\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/cpu/limit_cores\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -537,7 +536,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/cpu/limit_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/cpu/limit_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -622,7 +621,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/cpu/request_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/cpu/request_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -707,7 +706,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/memory/limit_bytes\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/memory/limit_bytes\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -771,7 +770,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/memory/limit_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/memory/limit_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -856,7 +855,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/memory/request_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/memory/request_utilization\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -941,7 +940,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_RATE"
                     },
-                    "filter": "metric.type=\"kubernetes.io/container/restart_count\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/container/restart_count\" resource.type=\"k8s_container\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -984,7 +983,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_RATE"
                     },
-                    "filter": "metric.type=\"kubernetes.io/pod/network/received_bytes_count\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/pod/network/received_bytes_count\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -1069,7 +1068,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_RATE"
                     },
-                    "filter": "metric.type=\"kubernetes.io/pod/network/sent_bytes_count\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/pod/network/sent_bytes_count\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -1154,7 +1153,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/pod/volume/total_bytes\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/pod/volume/total_bytes\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -1239,7 +1238,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/pod/volume/used_bytes\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/pod/volume/used_bytes\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -1324,7 +1323,7 @@ CLUSTER_NAME=${cluster_name}
                       "groupByFields": [],
                       "perSeriesAligner": "ALIGN_MEAN"
                     },
-                    "filter": "metric.type=\"kubernetes.io/pod/volume/utilization\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${CLUSTER_NAME}\"",
+                    "filter": "metric.type=\"kubernetes.io/pod/volume/utilization\" resource.type=\"k8s_pod\" resource.label.\"cluster_name\"=\"${cluster_name}\"",
                     "secondaryAggregation": {
                       "alignmentPeriod": "60s",
                       "crossSeriesReducer": "REDUCE_NONE",
@@ -1387,6 +1386,49 @@ CLUSTER_NAME=${cluster_name}
         "width": 6,
         "xPos": 6,
         "yPos": 32
+      },
+            {
+        "height": 4,
+        "widget": {
+          "title": "Nodes - CPU utilization [MEAN]",
+          "xyChart": {
+            "chartOptions": {
+              "mode": "COLOR"
+            },
+            "dataSets": [
+              {
+                "minAlignmentPeriod": "60s",
+                "plotType": "LINE",
+                "targetAxis": "Y1",
+                "timeSeriesQuery": {
+                  "apiSource": "DEFAULT_CLOUD",
+                  "timeSeriesFilter": {
+                    "aggregation": {
+                      "alignmentPeriod": "60s",
+                      "crossSeriesReducer": "REDUCE_NONE",
+                      "perSeriesAligner": "ALIGN_MEAN"
+                    },
+                    "filter": "metric.type=\"compute.googleapis.com/instance/cpu/utilization\" resource.type=\"gce_instance\" metadata.user_labels.\"nodes\"=\"${cluster_name}\"",
+                    "secondaryAggregation": {
+                      "alignmentPeriod": "60s",
+                      "crossSeriesReducer": "REDUCE_NONE",
+                      "perSeriesAligner": "ALIGN_NONE"
+                    }
+                  }
+                }
+              }
+            ],
+            "thresholds": [],
+            "timeshiftDuration": "0s",
+            "yAxis": {
+              "label": "y1Axis",
+              "scale": "LINEAR"
+            }
+          }
+        },
+        "width": 6,
+        "xPos": 0,
+        "yPos": 36
       }
     ]
   }

@@ -7,8 +7,9 @@ variable "template" {
 variable "dashboard"{
     type = string
     default = ""
-    description = ""
+    description = "path to JSON file which describe monitoring dashboard"
 }
+
 
 variable "cluster_name" {
   type        = string
