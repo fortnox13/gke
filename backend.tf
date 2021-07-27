@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "telus-test-01-tf-rs"
+    bucket = "testing-telus-1"
     prefix = "state"
   }
 }

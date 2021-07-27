@@ -56,7 +56,7 @@ resource "google_compute_instance" "bastion" {
   machine_type = var.machine_type
   zone         = var.gcp_zone
 
-labels = {
+  labels = {
       instance = "bastion"
   }
 
@@ -66,10 +66,6 @@ labels = {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-1804-lts"
     }
-  }
-
-  scratch_disk {
-    interface = "SCSI"
   }
 
     metadata = {

@@ -1,0 +1,1497 @@
+Acquiring state lock. This may take a few moments...
+[0m[1mmodule.network.google_compute_network.network: Refreshing state... [id=projects/fresh-capsule-321009/global/networks/gke-1-2-mrc][0m
+[0m[1mmodule.gke-1.google_service_account.gke_nodes_sa: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_service_account.gke_nodes_sa: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet][0m
+[0m[1mmodule.network.google_compute_router.router["us-central1"]: Refreshing state... [id=projects/fresh-capsule-321009/regions/us-central1/routers/router-gke-1-2-mrc-us-central1][0m
+[0m[1mmodule.gke-1.google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet][0m
+[0m[1mmodule.network.google_compute_router.router["northamerica-northeast1"]: Refreshing state... [id=projects/fresh-capsule-321009/regions/northamerica-northeast1/routers/router-gke-1-2-mrc-northamerica-northeast1][0m
+[0m[1mmodule.network.google_compute_firewall.firewall: Refreshing state... [id=projects/fresh-capsule-321009/global/firewalls/gke-1-2-mrc-allow-all][0m
+[0m[1mmodule.network.google_compute_router_nat.router_nat["northamerica-northeast1"]: Refreshing state... [id=fresh-capsule-321009/northamerica-northeast1/router-gke-1-2-mrc-northamerica-northeast1/router-nat-gke-1-2-mrc-northamerica-northeast1][0m
+[0m[1mmodule.network.google_compute_router_nat.router_nat["us-central1"]: Refreshing state... [id=fresh-capsule-321009/us-central1/router-gke-1-2-mrc-us-central1/router-nat-gke-1-2-mrc-us-central1][0m
+[0m[1mmodule.gke-2.google_container_cluster.cluster: Refreshing state... [id=projects/fresh-capsule-321009/locations/northamerica-northeast1/clusters/gke-2][0m
+[0m[1mmodule.gke-1.google_container_cluster.cluster: Refreshing state... [id=projects/fresh-capsule-321009/locations/us-central1/clusters/gke-1][0m
+[0m[1mmodule.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"]: Refreshing state... [id=fresh-capsule-321009/roles/storage.objectViewer/serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"]: Refreshing state... [id=fresh-capsule-321009/roles/source.reader/serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"]: Refreshing state... [id=fresh-capsule-321009/roles/source.reader/serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"]: Refreshing state... [id=fresh-capsule-321009/roles/storage.objectViewer/serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.gke-2.google_container_node_pool.cluster_node_pool: Refreshing state... [id=projects/fresh-capsule-321009/locations/northamerica-northeast1/clusters/gke-2/nodePools/gke-2-node-pool][0m
+[0m[1mmodule.bastion-2[0].google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-bastion-subnet][0m
+[0m[1mmodule.bastion-2[0].google_service_account.bastion_sa: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-compute-sa"]: Refreshing state... [id=gke-2/gke-2-compute-sa][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-dns-sa"]: Refreshing state... [id=gke-2/gke-2-dns-sa][0m
+[0m[1mmodule.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-storage-sa"]: Refreshing state... [id=gke-2/gke-2-storage-sa][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-2"]: Refreshing state... [id=gke-2][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-1"]: Refreshing state... [id=gke-1][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"]: Refreshing state... [id=fresh-capsule-321009/roles/iam.serviceAccountUser/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0]: Refreshing state... [id=projects/fresh-capsule-321009/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-2-bastion-host][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"]: Refreshing state... [id=fresh-capsule-321009/roles/compute.instanceAdmin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/container.admin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"]: Refreshing state... [id=fresh-capsule-321009/roles/container.clusterAdmin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"]: Refreshing state... [id=fresh-capsule-321009/roles/iap.tunnelResourceAccessor/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].google_compute_instance.bastion: Refreshing state... [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instances/gke-2-bastion-host][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-1"]: Refreshing state... [id=gke-1/devops-secret][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-2"]: Refreshing state... [id=gke-2/devops-secret][0m
+[0m[1mmodule.k8s-gke-2[0].kubernetes_service.kubernetes_service["gke-2"]: Refreshing state... [id=gke-2/pf-pingdataconsole-https][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/compute.admin/serviceAccount:gke-2-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-compute-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-2/gke-2-compute-sa]][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-2/gke-2-dns-sa]][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/storage.admin/serviceAccount:gke-2-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-storage-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-2-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-2/gke-2-storage-sa]][0m
+[0m[1mmodule.wi_gsa-gke-2["gke-2-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/dns.admin/serviceAccount:gke-2-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-2[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-2-bastion-host northamerica-northeast1-a"]: Refreshing state... [id=projects/fresh-capsule-321009/iap_tunnel/zones/northamerica-northeast1-a/instances/gke-2-bastion-host/roles/iap.tunnelResourceAccessor][0m
+[0m[1mmodule.gke-1.google_container_node_pool.cluster_node_pool: Refreshing state... [id=projects/fresh-capsule-321009/locations/us-central1/clusters/gke-1/nodePools/gke-1-node-pool][0m
+[0m[1mmodule.mcs[0].null_resource.run_destroy_command[0]: Refreshing state... [id=7029585266358158620][0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Refreshing state... [id=4164572990810612362][0m
+[0m[1mmodule.bastion-1[0].google_service_account.bastion_sa: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_compute_subnetwork.subnetwork: Refreshing state... [id=projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-bastion-subnet][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-compute-sa"]: Refreshing state... [id=gke-1/gke-1-compute-sa][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-storage-sa"]: Refreshing state... [id=gke-1/gke-1-storage-sa][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-1"]: Refreshing state... [id=gke-1][0m
+[0m[1mmodule.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-dns-sa"]: Refreshing state... [id=gke-1/gke-1-dns-sa][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-2"]: Refreshing state... [id=gke-2][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"]: Refreshing state... [id=fresh-capsule-321009/roles/iap.tunnelResourceAccessor/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/container.admin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"]: Refreshing state... [id=fresh-capsule-321009/roles/container.clusterAdmin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"]: Refreshing state... [id=fresh-capsule-321009/roles/iam.serviceAccountUser/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"]: Refreshing state... [id=fresh-capsule-321009/roles/compute.instanceAdmin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0]: Refreshing state... [id=projects/fresh-capsule-321009/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-1-bastion-host][0m
+[0m[1mmodule.bastion-1[0].google_compute_instance.bastion: Refreshing state... [id=projects/fresh-capsule-321009/zones/us-central1-a/instances/gke-1-bastion-host][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-1"]: Refreshing state... [id=gke-1/devops-secret][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-2"]: Refreshing state... [id=gke-2/devops-secret][0m
+[0m[1mmodule.k8s-gke-1[0].kubernetes_service.kubernetes_service["gke-1"]: Refreshing state... [id=gke-1/pf-pingdataconsole-https][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.lb[0].time_sleep.wait: Refreshing state... [id=2021-07-26T14:11:30Z][0m
+[0m[1mmodule.lb[0].google_compute_ssl_certificate.ssl_certificate: Refreshing state... [id=projects/fresh-capsule-321009/global/sslCertificates/pingdataconsole-certificate][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account.cluster_service_account: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.lb[0].google_compute_global_address.global_address: Refreshing state... [id=projects/fresh-capsule-321009/global/addresses/pingdataconsole-global-ip][0m
+[0m[1mmodule.lb[0].google_compute_health_check.health_check: Refreshing state... [id=projects/fresh-capsule-321009/global/healthChecks/pingdataconsole-health-check][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-1/gke-1-storage-sa]][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-1/gke-1-compute-sa]][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_service_account_iam_member.main: Refreshing state... [id=projects/fresh-capsule-321009/serviceAccounts/gke-1-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:fresh-capsule-321009.svc.id.goog[gke-1/gke-1-dns-sa]][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/storage.admin/serviceAccount:gke-1-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/compute.admin/serviceAccount:gke-1-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.wi_gsa-gke-1["gke-1-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"]: Refreshing state... [id=fresh-capsule-321009/roles/dns.admin/serviceAccount:gke-1-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com][0m
+[0m[1mmodule.bastion-1[0].module.iap_tunneling.google_iap_tunnel_instance_iam_binding.enable_iap["gke-1-bastion-host us-central1-a"]: Refreshing state... [id=projects/fresh-capsule-321009/iap_tunnel/zones/us-central1-a/instances/gke-1-bastion-host/roles/iap.tunnelResourceAccessor][0m
+[0m[1mmodule.lb[0].google_compute_backend_service.backend_service: Refreshing state... [id=projects/fresh-capsule-321009/global/backendServices/pingdataconsole-backend-service][0m
+[0m[1mmodule.lb[0].google_compute_url_map.url_map: Refreshing state... [id=projects/fresh-capsule-321009/global/urlMaps/pingdataconsole-url-map][0m
+[0m[1mmodule.lb[0].google_compute_target_https_proxy.target_https_proxy: Refreshing state... [id=projects/fresh-capsule-321009/global/targetHttpsProxies/pingdataconsole-target-https-proxy][0m
+[0m[1mmodule.lb[0].google_compute_global_forwarding_rule.global_forwarding_rule: Refreshing state... [id=projects/fresh-capsule-321009/global/forwardingRules/pingdataconsoleglobalrule][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply":
+
+[1m  # module.wi_gsa-gke-2["gke-2-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy/zz/A=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/dns.admin/serviceAccount:gke-2-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.wi_gsa-gke-2["gke-2-storage-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/storage.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/storage.admin/serviceAccount:gke-2-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_firewall" "allow_from_iap_to_instances" {
+        [1m[0mid[0m[0m                      = "projects/fresh-capsule-321009/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-1-bastion-host"
+        [1m[0mname[0m[0m                    = "test-allow-ssh-from-iap-to-tunnel-gke-1-bastion-host"
+      [32m+[0m [0m[1m[0msource_service_accounts[0m[0m = []
+      [32m+[0m [0m[1m[0msource_tags[0m[0m             = []
+      [32m+[0m [0m[1m[0mtarget_tags[0m[0m             = []
+        [90m# (10 unchanged attributes hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+[1m  # module.wi_gsa-gke-1["gke-1-dns-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/dns.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzEX+4g=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/dns.admin/serviceAccount:gke-1-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-2.google_container_cluster.cluster[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_container_cluster" "cluster" {
+        [1m[0mid[0m[0m                          = "projects/fresh-capsule-321009/locations/northamerica-northeast1/clusters/gke-2"
+      [33m~[0m [0m[1m[0minstance_group_urls[0m[0m         = [
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instanceGroups/gke-gke-2-gke-2-node-pool-55778848-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/instanceGroups/gke-gke-2-gke-2-node-pool-ff8ad059-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/instanceGroups/gke-gke-2-gke-2-node-pool-8399a4ca-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instanceGroups/gke-gke-2-nap-e2-medium-gn6oix1c-c6513810-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/instanceGroups/gke-gke-2-nap-e2-medium-gn6oix1c-70478079-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/instanceGroups/gke-gke-2-nap-e2-medium-gn6oix1c-b7101233-grp",
+        ]
+        [1m[0mname[0m[0m                        = "gke-2"
+        [90m# (27 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+
+
+
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS_CONTAINERD"
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = {}
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+              [32m+[0m [0m"disable-legacy-endpoints" = "true"
+            }
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+              [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+              [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+              [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+              [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+              [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+            ]
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = "gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+          [32m+[0m [0m[1m[0mtags[0m[0m              = []
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+            }
+        }
+
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = 1
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instanceGroupManagers/gke-gke-2-gke-2-node-pool-55778848-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/instanceGroupManagers/gke-gke-2-gke-2-node-pool-ff8ad059-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/instanceGroupManagers/gke-gke-2-gke-2-node-pool-8399a4ca-grp",
+            ]
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = 30
+          [32m+[0m [0m[1m[0mname[0m[0m                = "gke-2-node-pool"
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = 1
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = [
+              [32m+[0m [0m"northamerica-northeast1-a",
+              [32m+[0m [0m"northamerica-northeast1-b",
+              [32m+[0m [0m"northamerica-northeast1-c",
+            ]
+          [32m+[0m [0m[1m[0mversion[0m[0m             = "1.19.9-gke.1900"
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 2
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 1
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = true
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = true
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS_CONTAINERD"
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = {}
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+                  [32m+[0m [0m"disable-legacy-endpoints" = "true"
+                }
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+                  [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+                ]
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = "gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+              [32m+[0m [0m[1m[0mtags[0m[0m              = []
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = 1
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = 0
+            }
+        }
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = 0
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instanceGroupManagers/gke-gke-2-nap-e2-medium-gn6oix1c-c6513810-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/instanceGroupManagers/gke-gke-2-nap-e2-medium-gn6oix1c-70478079-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/instanceGroupManagers/gke-gke-2-nap-e2-medium-gn6oix1c-b7101233-grp",
+            ]
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = 30
+          [32m+[0m [0m[1m[0mname[0m[0m                = "nap-e2-medium-gn6oix1c"
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = 0
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = [
+              [32m+[0m [0m"northamerica-northeast1-a",
+              [32m+[0m [0m"northamerica-northeast1-b",
+              [32m+[0m [0m"northamerica-northeast1-c",
+            ]
+          [32m+[0m [0m[1m[0mversion[0m[0m             = "1.19.9-gke.1900"
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 1000
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 0
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = true
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = true
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 100
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS"
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = {
+                  [32m+[0m [0m"cloud.google.com/gke-nodepool"        = "nap-e2-medium-gn6oix1c"
+                  [32m+[0m [0m"cloud.google.com/gke-os-distribution" = "cos"
+                }
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "e2-medium"
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+                  [32m+[0m [0m"disable-legacy-endpoints" = "true"
+                }
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+                  [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+                ]
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = "default"
+              [32m+[0m [0m[1m[0mtags[0m[0m              = []
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = 1
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = 0
+            }
+        }
+
+
+
+
+
+        [90m# (15 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.gke-2.google_container_node_pool.cluster_node_pool[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_container_node_pool" "cluster_node_pool" {
+        [1m[0mid[0m[0m                  = "projects/fresh-capsule-321009/locations/northamerica-northeast1/clusters/gke-2/nodePools/gke-2-node-pool"
+        [1m[0mname[0m[0m                = "gke-2-node-pool"
+        [90m# (9 unchanged attributes hidden)[0m[0m
+
+
+
+      [33m~[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mtags[0m[0m              = []
+            [90m# (12 unchanged attributes hidden)[0m[0m
+
+
+            [90m# (2 unchanged blocks hidden)[0m[0m
+        }
+
+        [90m# (3 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBw2fezk=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/storage.objectViewer/serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-2.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBw2fezk=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/source.reader/serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-2.google_compute_subnetwork.subnetwork[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+        [1m[0mid[0m[0m                         = "projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet"
+        [1m[0mname[0m[0m                       = "gke-2-subnet"
+      [33m~[0m [0m[1m[0mprivate_ip_google_access[0m[0m   = false [33m->[0m [0mtrue
+        [90m# (9 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.k8s-gke-1[0].kubernetes_service.kubernetes_service["gke-1"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service" "kubernetes_service" {
+        [1m[0mid[0m[0m                     = "gke-1/pf-pingdataconsole-https"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [33m~[0m [0m[1m[0mannotations[0m[0m      = {
+              [33m~[0m [0m"cloud.google.com/neg-status"    = jsonencode(
+                  [33m~[0m [0m{
+                      [32m+[0m [0mzones                   = [
+                          [32m+[0m [0m"us-central1-a",
+                          [32m+[0m [0m"us-central1-b",
+                          [32m+[0m [0m"us-central1-c",
+                        ]
+                        [90m# (1 unchanged element hidden)[0m[0m
+                    }
+                )
+                [90m# (7 unchanged elements hidden)[0m[0m
+            }
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "pf-pingdataconsole-https"
+          [33m~[0m [0m[1m[0mresource_version[0m[0m = "4116" [33m->[0m [0m"8414"
+            [90m# (3 unchanged attributes hidden)[0m[0m
+        }
+
+      [33m~[0m [0mspec {
+          [32m+[0m [0m[1m[0mexternal_ips[0m[0m                = []
+          [32m+[0m [0m[1m[0mload_balancer_source_ranges[0m[0m = []
+            [90m# (6 unchanged attributes hidden)[0m[0m
+
+            [90m# (1 unchanged block hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-1"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+        [1m[0mid[0m[0m = "gke-1"
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {}
+            [1m[0mname[0m[0m             = "gke-1"
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-1[0].kubernetes_namespace.k8s_namespace["gke-2"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+        [1m[0mid[0m[0m = "gke-2"
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {}
+            [1m[0mname[0m[0m             = "gke-2"
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-1"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_secret" "devops-secret" {
+        [1m[0mid[0m[0m          = "gke-1/devops-secret"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "devops-secret"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-1[0].kubernetes_secret.devops-secret["gke-2"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_secret" "devops-secret" {
+        [1m[0mid[0m[0m          = "gke-2/devops-secret"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "devops-secret"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/compute.instanceAdmin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/container.admin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/container.clusterAdmin/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/iam.serviceAccountUser/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzBf/nI=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/iap.tunnelResourceAccessor/serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-1[0].google_compute_instance.bastion[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_instance" "bastion" {
+        [1m[0mid[0m[0m                      = "projects/fresh-capsule-321009/zones/us-central1-a/instances/gke-1-bastion-host"
+        [1m[0mname[0m[0m                    = "gke-1-bastion-host"
+      [32m+[0m [0m[1m[0mresource_policies[0m[0m       = []
+        [1m[0mtags[0m[0m                    = [
+            "bastion",
+        ]
+        [90m# (17 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+        [90m# (6 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.gke-1.google_container_node_pool.cluster_node_pool[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_container_node_pool" "cluster_node_pool" {
+        [1m[0mid[0m[0m                  = "projects/fresh-capsule-321009/locations/us-central1/clusters/gke-1/nodePools/gke-1-node-pool"
+        [1m[0mname[0m[0m                = "gke-1-node-pool"
+        [90m# (9 unchanged attributes hidden)[0m[0m
+
+
+
+      [33m~[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mtags[0m[0m              = []
+            [90m# (12 unchanged attributes hidden)[0m[0m
+
+
+            [90m# (2 unchanged blocks hidden)[0m[0m
+        }
+
+        [90m# (3 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/storage.objectViewer"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBw2fezk=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/storage.objectViewer/serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-1.google_project_iam_member.gke_nodes_sa_bindings["roles/source.reader"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "gke_nodes_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBw2fezk=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/source.reader/serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-1.google_compute_subnetwork.subnetwork[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+        [1m[0mid[0m[0m                         = "projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet"
+        [1m[0mname[0m[0m                       = "gke-1-subnet"
+      [33m~[0m [0m[1m[0mprivate_ip_google_access[0m[0m   = false [33m->[0m [0mtrue
+        [90m# (9 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.gke-1.google_container_cluster.cluster[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_container_cluster" "cluster" {
+        [1m[0mid[0m[0m                          = "projects/fresh-capsule-321009/locations/us-central1/clusters/gke-1"
+      [33m~[0m [0m[1m[0minstance_group_urls[0m[0m         = [
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-a/instanceGroups/gke-gke-1-gke-1-node-pool-d63a561a-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-b/instanceGroups/gke-gke-1-gke-1-node-pool-34790242-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-c/instanceGroups/gke-gke-1-gke-1-node-pool-031c1098-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-a/instanceGroups/gke-gke-1-nap-e2-medium-j9aissgx-96d17883-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-b/instanceGroups/gke-gke-1-nap-e2-medium-j9aissgx-e7264c16-grp",
+          [32m+[0m [0m"https://www.googleapis.com/compute/beta/projects/fresh-capsule-321009/zones/us-central1-c/instanceGroups/gke-gke-1-nap-e2-medium-j9aissgx-3d593188-grp",
+        ]
+        [1m[0mname[0m[0m                        = "gke-1"
+        [90m# (27 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+
+
+
+
+      [32m+[0m [0mnode_config {
+          [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+          [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+          [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+          [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS_CONTAINERD"
+          [32m+[0m [0m[1m[0mlabels[0m[0m            = {}
+          [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+          [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+          [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+              [32m+[0m [0m"disable-legacy-endpoints" = "true"
+            }
+          [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+              [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+              [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+              [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+              [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+              [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+              [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+              [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+            ]
+          [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+          [32m+[0m [0m[1m[0mservice_account[0m[0m   = "gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+          [32m+[0m [0m[1m[0mtags[0m[0m              = []
+          [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+          [32m+[0m [0mshielded_instance_config {
+              [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+              [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+            }
+
+          [32m+[0m [0mworkload_metadata_config {
+              [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+            }
+        }
+
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = 1
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a/instanceGroupManagers/gke-gke-1-gke-1-node-pool-d63a561a-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b/instanceGroupManagers/gke-gke-1-gke-1-node-pool-34790242-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c/instanceGroupManagers/gke-gke-1-gke-1-node-pool-031c1098-grp",
+            ]
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = 30
+          [32m+[0m [0m[1m[0mname[0m[0m                = "gke-1-node-pool"
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = 1
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = [
+              [32m+[0m [0m"us-central1-a",
+              [32m+[0m [0m"us-central1-b",
+              [32m+[0m [0m"us-central1-c",
+            ]
+          [32m+[0m [0m[1m[0mversion[0m[0m             = "1.19.9-gke.1900"
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 2
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 1
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = true
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = true
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 30
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS_CONTAINERD"
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = {}
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "n1-standard-1"
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+                  [32m+[0m [0m"disable-legacy-endpoints" = "true"
+                }
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+                  [32m+[0m [0m"https://www.googleapis.com/auth/cloud-platform",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/devstorage.full_control",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/service.management.readonly",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/servicecontrol",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/source.full_control",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/trace.append",
+                ]
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = "gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+              [32m+[0m [0m[1m[0mtags[0m[0m              = []
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = 1
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = 0
+            }
+        }
+      [32m+[0m [0mnode_pool {
+          [32m+[0m [0m[1m[0minitial_node_count[0m[0m  = 0
+          [32m+[0m [0m[1m[0minstance_group_urls[0m[0m = [
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a/instanceGroupManagers/gke-gke-1-nap-e2-medium-j9aissgx-96d17883-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b/instanceGroupManagers/gke-gke-1-nap-e2-medium-j9aissgx-e7264c16-grp",
+              [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c/instanceGroupManagers/gke-gke-1-nap-e2-medium-j9aissgx-3d593188-grp",
+            ]
+          [32m+[0m [0m[1m[0mmax_pods_per_node[0m[0m   = 30
+          [32m+[0m [0m[1m[0mname[0m[0m                = "nap-e2-medium-j9aissgx"
+          [32m+[0m [0m[1m[0mnode_count[0m[0m          = 0
+          [32m+[0m [0m[1m[0mnode_locations[0m[0m      = [
+              [32m+[0m [0m"us-central1-a",
+              [32m+[0m [0m"us-central1-b",
+              [32m+[0m [0m"us-central1-c",
+            ]
+          [32m+[0m [0m[1m[0mversion[0m[0m             = "1.19.9-gke.1900"
+
+          [32m+[0m [0mautoscaling {
+              [32m+[0m [0m[1m[0mmax_node_count[0m[0m = 1000
+              [32m+[0m [0m[1m[0mmin_node_count[0m[0m = 0
+            }
+
+          [32m+[0m [0mmanagement {
+              [32m+[0m [0m[1m[0mauto_repair[0m[0m  = true
+              [32m+[0m [0m[1m[0mauto_upgrade[0m[0m = true
+            }
+
+          [32m+[0m [0mnode_config {
+              [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m      = 100
+              [32m+[0m [0m[1m[0mdisk_type[0m[0m         = "pd-standard"
+              [32m+[0m [0m[1m[0mguest_accelerator[0m[0m = []
+              [32m+[0m [0m[1m[0mimage_type[0m[0m        = "COS"
+              [32m+[0m [0m[1m[0mlabels[0m[0m            = {
+                  [32m+[0m [0m"cloud.google.com/gke-nodepool"        = "nap-e2-medium-j9aissgx"
+                  [32m+[0m [0m"cloud.google.com/gke-os-distribution" = "cos"
+                }
+              [32m+[0m [0m[1m[0mlocal_ssd_count[0m[0m   = 0
+              [32m+[0m [0m[1m[0mmachine_type[0m[0m      = "e2-medium"
+              [32m+[0m [0m[1m[0mmetadata[0m[0m          = {
+                  [32m+[0m [0m"disable-legacy-endpoints" = "true"
+                }
+              [32m+[0m [0m[1m[0moauth_scopes[0m[0m      = [
+                  [32m+[0m [0m"https://www.googleapis.com/auth/logging.write",
+                  [32m+[0m [0m"https://www.googleapis.com/auth/monitoring",
+                ]
+              [32m+[0m [0m[1m[0mpreemptible[0m[0m       = false
+              [32m+[0m [0m[1m[0mservice_account[0m[0m   = "default"
+              [32m+[0m [0m[1m[0mtags[0m[0m              = []
+              [32m+[0m [0m[1m[0mtaint[0m[0m             = []
+
+              [32m+[0m [0mshielded_instance_config {
+                  [32m+[0m [0m[1m[0menable_integrity_monitoring[0m[0m = true
+                  [32m+[0m [0m[1m[0menable_secure_boot[0m[0m          = false
+                }
+
+              [32m+[0m [0mworkload_metadata_config {
+                  [32m+[0m [0m[1m[0mnode_metadata[0m[0m = "GKE_METADATA_SERVER"
+                }
+            }
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m       = 1
+              [32m+[0m [0m[1m[0mmax_unavailable[0m[0m = 0
+            }
+        }
+
+
+
+
+
+        [90m# (15 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-1"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_secret" "devops-secret" {
+        [1m[0mid[0m[0m          = "gke-1/devops-secret"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "devops-secret"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-2[0].kubernetes_secret.devops-secret["gke-2"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_secret" "devops-secret" {
+        [1m[0mid[0m[0m          = "gke-2/devops-secret"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "devops-secret"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-2[0].kubernetes_service.kubernetes_service["gke-2"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service" "kubernetes_service" {
+        [1m[0mid[0m[0m                     = "gke-2/pf-pingdataconsole-https"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [33m~[0m [0m[1m[0mannotations[0m[0m      = {
+              [33m~[0m [0m"cloud.google.com/neg-status"    = jsonencode(
+                  [33m~[0m [0m{
+                      [32m+[0m [0mzones                   = [
+                          [32m+[0m [0m"northamerica-northeast1-a",
+                          [32m+[0m [0m"northamerica-northeast1-b",
+                          [32m+[0m [0m"northamerica-northeast1-c",
+                        ]
+                        [90m# (1 unchanged element hidden)[0m[0m
+                    }
+                )
+                [90m# (7 unchanged elements hidden)[0m[0m
+            }
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "pf-pingdataconsole-https"
+          [33m~[0m [0m[1m[0mresource_version[0m[0m = "3657" [33m->[0m [0m"8993"
+            [90m# (3 unchanged attributes hidden)[0m[0m
+        }
+
+      [33m~[0m [0mspec {
+          [32m+[0m [0m[1m[0mexternal_ips[0m[0m                = []
+          [32m+[0m [0m[1m[0mload_balancer_source_ranges[0m[0m = []
+            [90m# (6 unchanged attributes hidden)[0m[0m
+
+            [90m# (1 unchanged block hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-2"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+        [1m[0mid[0m[0m = "gke-2"
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {}
+            [1m[0mname[0m[0m             = "gke-2"
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.k8s-gke-2[0].kubernetes_namespace.k8s_namespace["gke-1"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_namespace" "k8s_namespace" {
+        [1m[0mid[0m[0m = "gke-1"
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {}
+            [1m[0mname[0m[0m             = "gke-1"
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iap.tunnelResourceAccessor"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy/zz/A=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/iap.tunnelResourceAccessor/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/compute.instanceAdmin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy9JNKU=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/compute.instanceAdmin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy+YrRg=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/container.admin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/container.clusterAdmin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy+YrRg=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/container.clusterAdmin/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].google_project_iam_member.bastion_sa_iam["roles/iam.serviceAccountUser"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "bastion_sa_iam" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy+YrRg=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/iam.serviceAccountUser/serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].google_compute_instance.bastion[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_instance" "bastion" {
+        [1m[0mid[0m[0m                      = "projects/fresh-capsule-321009/zones/northamerica-northeast1-a/instances/gke-2-bastion-host"
+        [1m[0mname[0m[0m                    = "gke-2-bastion-host"
+      [32m+[0m [0m[1m[0mresource_policies[0m[0m       = []
+        [1m[0mtags[0m[0m                    = [
+            "bastion",
+        ]
+        [90m# (17 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+        [90m# (6 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-compute-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-1/gke-1-compute-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-1-compute-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-dns-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-1/gke-1-dns-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-1-dns-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_k8s-gke-1.kubernetes_service_account.main["gke-1-storage-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-1/gke-1-storage-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-1-storage-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-storage-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-2/gke-2-storage-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-2-storage-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-compute-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-2/gke-2-compute-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-2-compute-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_k8s-gke-2.kubernetes_service_account.main["gke-2-dns-sa"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service_account" "main" {
+        [1m[0mid[0m[0m                              = "gke-2/gke-2-dns-sa"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "gke-2-dns-sa"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.wi_gsa-gke-1["gke-1-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBzEX+4g=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/compute.admin/serviceAccount:gke-1-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.lb[0].google_compute_backend_service.backend_service[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_backend_service" "backend_service" {
+      [32m+[0m [0m[1m[0mcustom_request_headers[0m[0m          = []
+      [32m+[0m [0m[1m[0mcustom_response_headers[0m[0m         = []
+      [33m~[0m [0m[1m[0mhealth_checks[0m[0m                   = [
+          [32m+[0m [0m"https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/healthChecks/pingdataconsole-health-check",
+          [31m-[0m [0m"projects/fresh-capsule-321009/global/healthChecks/pingdataconsole-health-check",
+        ]
+        [1m[0mid[0m[0m                              = "projects/fresh-capsule-321009/global/backendServices/pingdataconsole-backend-service"
+        [1m[0mname[0m[0m                            = "pingdataconsole-backend-service"
+        [90m# (12 unchanged attributes hidden)[0m[0m
+
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg"
+          [32m+[0m [0m[1m[0mmax_connections[0m[0m              = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m                     = 1
+          [32m+[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m           = "projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.lb[0].google_compute_global_forwarding_rule.global_forwarding_rule[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_global_forwarding_rule" "global_forwarding_rule" {
+        [1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/global/forwardingRules/pingdataconsoleglobalrule"
+      [32m+[0m [0m[1m[0mlabels[0m[0m                = {}
+        [1m[0mname[0m[0m                  = "pingdataconsoleglobalrule"
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+[1m  # module.bastion-2[0].module.iap_tunneling.google_compute_firewall.allow_from_iap_to_instances[0][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_firewall" "allow_from_iap_to_instances" {
+        [1m[0mid[0m[0m                      = "projects/fresh-capsule-321009/global/firewalls/test-allow-ssh-from-iap-to-tunnel-gke-2-bastion-host"
+        [1m[0mname[0m[0m                    = "test-allow-ssh-from-iap-to-tunnel-gke-2-bastion-host"
+      [32m+[0m [0m[1m[0msource_service_accounts[0m[0m = []
+      [32m+[0m [0m[1m[0msource_tags[0m[0m             = []
+      [32m+[0m [0m[1m[0mtarget_tags[0m[0m             = []
+        [90m# (10 unchanged attributes hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+[1m  # module.wi_gsa-gke-2["gke-2-compute-sa"].google_project_iam_member.workload_identity_sa_bindings["roles/compute.admin"][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "google_project_iam_member" "workload_identity_sa_bindings" {
+      [33m~[0m [0m[1m[0metag[0m[0m    = "BwXIBy/zz/A=" [33m->[0m [0m"BwXIBzGLESs="
+        [1m[0mid[0m[0m      = "fresh-capsule-321009/roles/compute.admin/serviceAccount:gke-2-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com"
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[31m-[0m/[32m+[0m destroy and then create replacement
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.gke-1.google_compute_subnetwork.subnetwork[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+        [1m[0mid[0m[0m                         = "projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet"
+        [1m[0mname[0m[0m                       = "gke-1-subnet"
+      [31m-[0m [0m[1m[0mprivate_ip_google_access[0m[0m   = true [90m->[0m [0m[90mnull[0m[0m
+        [90m# (9 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.gke-2.google_compute_subnetwork.subnetwork[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_subnetwork" "subnetwork" {
+        [1m[0mid[0m[0m                         = "projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet"
+        [1m[0mname[0m[0m                       = "gke-2-subnet"
+      [31m-[0m [0m[1m[0mprivate_ip_google_access[0m[0m   = true [90m->[0m [0m[90mnull[0m[0m
+        [90m# (9 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-a"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "313ecc49-624b-4245-8e1e-cf0842be1697"
+              [31m-[0m [0mnamespace    = "gke-2"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a" [33m->[0m [0m"northamerica-northeast1-a"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-b"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "313ecc49-624b-4245-8e1e-cf0842be1697"
+              [31m-[0m [0mnamespace    = "gke-2"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b" [33m->[0m [0m"northamerica-northeast1-b"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-c"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "313ecc49-624b-4245-8e1e-cf0842be1697"
+              [31m-[0m [0mnamespace    = "gke-2"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c" [33m->[0m [0m"northamerica-northeast1-c"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-a"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "2c1d57b4-b8dd-4ab8-bfb2-aaf400781e90"
+              [31m-[0m [0mnamespace    = "gke-1"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a" [33m->[0m [0m"us-central1-a"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-b"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "2c1d57b4-b8dd-4ab8-bfb2-aaf400781e90"
+              [31m-[0m [0mnamespace    = "gke-1"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b" [33m->[0m [0m"us-central1-b"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-c"][0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "google_compute_network_endpoint_group" "network_endpoint_group"  {
+      [33m~[0m [0m[1m[0mdefault_port[0m[0m          = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdescription[0m[0m           = jsonencode(
+            {
+              [31m-[0m [0mcluster-uid  = "2c1d57b4-b8dd-4ab8-bfb2-aaf400781e90"
+              [31m-[0m [0mnamespace    = "gke-1"
+              [31m-[0m [0mport         = "443"
+              [31m-[0m [0mservice-name = "pf-pingdataconsole-https"
+            }
+        ) [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                    = "projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg" [33m->[0m [0m(known after apply)
+        [1m[0mname[0m[0m                  = "pingdataconsole-https-neg"
+      [33m~[0m [0m[1m[0mnetwork[0m[0m               = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/global/networks/gke-1-2-mrc" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mnetwork_endpoint_type[0m[0m = "GCE_VM_IP_PORT" [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mself_link[0m[0m             = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+      [33m~[0m [0m[1m[0msize[0m[0m                  = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnetwork[0m[0m            = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mzone[0m[0m                  = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c" [33m->[0m [0m"us-central1-c"
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # module.lb[0].google_compute_backend_service.backend_service[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "google_compute_backend_service" "backend_service" {
+        [1m[0mid[0m[0m                              = "projects/fresh-capsule-321009/global/backendServices/pingdataconsole-backend-service"
+        [1m[0mname[0m[0m                            = "pingdataconsole-backend-service"
+        [90m# (15 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0mbackend {
+          [31m-[0m [0m[1m[0mbalancing_mode[0m[0m               = "RATE" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcapacity_scaler[0m[0m              = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgroup[0m[0m                        = "https://www.googleapis.com/compute/v1/projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_endpoint[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_connections_per_instance[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate[0m[0m                     = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_endpoint[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_rate_per_instance[0m[0m        = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_utilization[0m[0m              = 0.8 [90m->[0m [0m[90mnull[0m[0m
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+      [32m+[0m [0mbackend {
+          [32m+[0m [0m[1m[0mbalancing_mode[0m[0m  = "RATE"
+          [32m+[0m [0m[1m[0mcapacity_scaler[0m[0m = 1
+          [32m+[0m [0m[1m[0mgroup[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mmax_rate[0m[0m        = 1
+          [32m+[0m [0m[1m[0mmax_utilization[0m[0m = 0.8
+        }
+
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # module.mcs[0].null_resource.run_command[0][0m is tainted, so must be [1m[31mreplaced[0m[0m
+[0m[31m-[0m/[32m+[0m[0m resource "null_resource" "run_command" {
+      [33m~[0m [0m[1m[0mid[0m[0m       = "4164572990810612362" [33m->[0m [0m(known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 1 to add, 3 to change, 1 to destroy.
+[0m[0m[1mmodule.mcs[0].null_resource.run_command[0]: Destroying... [id=4164572990810612362][0m[0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Destruction complete after 0s[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-a"]: Reading... [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-c"]: Reading... [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-b"]: Reading... [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-c"]: Reading... [id=projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-a"]: Reading... [id=projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-b"]: Reading... [id=projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg][0m[0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Creating...[0m[0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Provisioning with 'local-exec'...[0m[0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "PATH=/google-cloud-sdk/bin:$PATH\n./scripts/mcs_enable.sh fresh-capsule-321009 gke-1 us-central1 gke-2 northamerica-northeast1\n"]
+[0m[1mmodule.gke-1.google_compute_subnetwork.subnetwork: Modifying... [id=projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet][0m[0m
+[0m[1mmodule.gke-2.google_compute_subnetwork.subnetwork: Modifying... [id=projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet][0m[0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-b"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/us-central1-b/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-c"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/us-central1-c/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-a"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-a/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-b"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-b/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["northamerica-northeast1-c"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/northamerica-northeast1-c/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.lb[0].data.google_compute_network_endpoint_group.network_endpoint_group["us-central1-a"]: Read complete after 1s [id=projects/fresh-capsule-321009/zones/us-central1-a/networkEndpointGroups/pingdataconsole-https-neg][0m
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mERROR: (gcloud.container.hub.memberships.register) The required property [project] is not currently set.
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mIt can be set on a per-command basis by re-running your command with the [--project] flag.
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mYou may set it for your current workspace by running:
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  $ gcloud config set project VALUE
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mor it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mERROR: (gcloud.container.hub.memberships.register) The required property [project] is not currently set.
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mIt can be set on a per-command basis by re-running your command with the [--project] flag.
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mYou may set it for your current workspace by running:
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  $ gcloud config set project VALUE
+
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mor it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mUpdated IAM policy for project [fresh-capsule-321009].
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mbindings:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-compute-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/compute.admin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/compute.instanceAdmin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:fresh-capsule-321009.svc.id.goog[gke-mcs/gke-mcs-importer]
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/compute.networkViewer
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@compute-system.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/compute.serviceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/container.admin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/container.clusterAdmin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@container-engine-robot.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/container.serviceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@containerregistry.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/containerregistry.ServiceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-dns-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/dns.admin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:332450257316-compute@developer.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:332450257316@cloudservices.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/editor
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@gcp-sa-gkehub.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/gkehub.serviceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/iam.serviceAccountUser
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-bastion-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/iap.tunnelResourceAccessor
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@gcp-sa-mcsd.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/multiclusterservicediscovery.serviceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - user:mykyta.demchenko.epam@gmail.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/owner
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:service-332450257316@gcp-sa-pubsub.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/pubsub.serviceAgent
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/source.reader
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-storage-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/storage.admin
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m- members:
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-1-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  - serviceAccount:gke-2-nodes-sa@fresh-capsule-321009.iam.gserviceaccount.com
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0m  role: roles/storage.objectViewer
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0metag: BwXIB18BUSI=
+[0m[1mmodule.mcs[0].null_resource.run_command[0] (local-exec):[0m [0mversion: 1
+[0m[1mmodule.mcs[0].null_resource.run_command[0]: Creation complete after 5s [id=7281863914943258088][0m
+[0m[1mmodule.gke-1.google_compute_subnetwork.subnetwork: Still modifying... [id=projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet, 10s elapsed][0m[0m
+[0m[1mmodule.gke-2.google_compute_subnetwork.subnetwork: Still modifying... [id=projects/fresh-capsule-321009/regions/n...ca-northeast1/subnetworks/gke-2-subnet, 10s elapsed][0m[0m
+[0m[1mmodule.gke-2.google_compute_subnetwork.subnetwork: Modifications complete after 11s [id=projects/fresh-capsule-321009/regions/northamerica-northeast1/subnetworks/gke-2-subnet][0m
+[0m[1mmodule.gke-1.google_compute_subnetwork.subnetwork: Modifications complete after 12s [id=projects/fresh-capsule-321009/regions/us-central1/subnetworks/gke-1-subnet][0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider kubernetes is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 82, in module "k8s-gke-1":
+[33m│[0m [0m  82:     [4mkubernetes[0m = kubernetes.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.k8s-gke-1 does not declare a provider named kubernetes.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for kubernetes in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and 5 more similar warnings elsewhere)
+[33m╵[0m[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider helm is undefined[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 202, in module "helm-gke-1":
+[33m│[0m [0m 202:     [4mhelm[0m       = helm.gke-1[0m
+[33m│[0m [0m
+[33m│[0m [0mModule module.helm-gke-1 does not declare a provider named helm.
+[33m│[0m [0mIf you wish to specify a provider configuration for the module, add an entry for helm in the required_providers block within the module.
+[33m│[0m [0m
+[33m│[0m [0m(and one more similar warning elsewhere)
+[33m╵[0m[0m
