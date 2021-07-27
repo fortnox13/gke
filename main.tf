@@ -301,9 +301,3 @@ module "dashboards_cluster" {
   ])
   cluster_name = each.value
 }
-
-# module "dashboards_cluster-2" {
-#   source       = "./modules/monitoring"
-#   template     = true
-#   cluster_name = var.cluster_gke-2_name
-# }
