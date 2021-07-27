@@ -1,20 +1,5 @@
 
 // Provides access to available Google Container Engine versions in a zone for a given project.
-// https://www.terraform.io/docs/providers/google/d/google_container_engine_versions.html
-data "google_container_engine_versions" "on-prem" {
-  location = var.zone
-  project  = var.project
-}
-
-///////////////////////////////////////////////////////////////////////////////////////
-// Create the resources needed for the Stackdriver Export Sinks
-///////////////////////////////////////////////////////////////////////////////////////
-
-// Random string used to create a unique bucket name
-resource "random_id" "server" {
-  byte_length = 8
-}
-
 // Create a Cloud Storage Bucket for long-term storage of logs
 // Note: the bucket has force_destroy turned on, so the data will be lost if you run
 // terraform destroy
