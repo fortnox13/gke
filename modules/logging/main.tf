@@ -30,10 +30,6 @@ resource "google_storage_bucket" "logs-bucket" {
       type = "Delete"
     }
   }
-<<<<<<< HEAD
-
-=======
->>>>>>>  add module to backup logs
 }
 
 // Create a BigQuery Dataset for storage of logs
@@ -45,13 +41,8 @@ resource "google_bigquery_dataset" "bigquery-dataset" {
 
   labels = {
     env = "default"
-<<<<<<< HEAD
- }
-=======
   }
->>>>>>>  add module to backup logs
 }
-
 ///////////////////////////////////////////////////////////////////////////////////////
 // Configure the stackdriver sinks and necessary roles.
 // To enable writing to the various export sinks we must grant additional permissions.
@@ -59,7 +50,6 @@ resource "google_bigquery_dataset" "bigquery-dataset" {
 // https://cloud.google.com/logging/docs/export/configure_export_v2#dest-auth
 ///////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
 // Create the Stackdriver Export Sink for Cloud Storage Notifications
 resource "google_logging_project_sink" "storage-sink" {
   name        = "storage-sink"
@@ -74,22 +64,6 @@ resource "google_logging_project_sink" "bigquery-sink" {
   name        = "bigquery-sink"
   destination = "bigquery.googleapis.com/projects/${var.project}/datasets/${google_bigquery_dataset.bigquery-dataset.dataset_id}"
   filter      = "resource.type = k8s_container"
-=======
-// Create the Stackdriver Export Sink for Cloud Storage GKE Notifications
-resource "google_logging_project_sink" "storage-sink" {
-  name        = "logging-storage-sink"
-  destination = "storage.googleapis.com/${google_storage_bucket.logs-bucket.name}"
-  
-  unique_writer_identity = true
-}
-
-// Create the Stackdriver Export Sink for BigQuery GKE Notifications
-resource "google_logging_project_sink" "bigquery-sink" {
-  name        = "bigquery-sink"
-  destination = "bigquery.googleapis.com/projects/${var.gcp_project_id}/datasets/${google_bigquery_dataset.bigquery-dataset.dataset_id}"
->>>>>>>  add module to backup logs
-
-  unique_writer_identity = true
 }
 
 // Grant the role of Storage Object Creator
@@ -109,9 +83,3 @@ resource "google_project_iam_binding" "log-writer-bigquery" {
     google_logging_project_sink.bigquery-sink.writer_identity,
   ]
 }
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>>  add module to backup logs
