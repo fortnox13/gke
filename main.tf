@@ -289,3 +289,9 @@ module "dashboards_cluster" {
   ])
   cluster_name = each.value
 }
+
+module "logging" {
+    source = "./modules/logging"
+   gcp_project_id = var.gcp_project_id
+
+}
